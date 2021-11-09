@@ -3,6 +3,7 @@
     package="com.postit.mymomsweather">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_CALL_LOG"/>
 
 
     <application
@@ -26,6 +27,7 @@
         <activity android:name=".ProfileActivity"/>
         <activity android:name=".ParentListActivity"/>
         <activity android:name=".ParentStatusActivity"/>
+        <activity android:name=".CallLogActivity"/>
     </application>
 
 </manifest>
