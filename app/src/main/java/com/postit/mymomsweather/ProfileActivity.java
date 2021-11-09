@@ -2,6 +2,8 @@ package com.postit.mymomsweather;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.RadioButton;
 import android.widget.Toast;
 
 import androidx.activity.result.ActivityResultCallback;
@@ -15,10 +17,14 @@ import com.firebase.ui.auth.FirebaseAuthUIActivityResultContract;
 import com.firebase.ui.auth.IdpResponse;
 import com.firebase.ui.auth.data.model.FirebaseAuthUIAuthenticationResult;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.postit.mymomsweather.Model.ChildUser;
+import com.postit.mymomsweather.Model.ParentUser;
 import com.postit.mymomsweather.databinding.ActivityProfileBinding;
 
 import java.util.Arrays;
@@ -65,6 +71,43 @@ public class ProfileActivity extends AppCompatActivity {
     private boolean checkLogin() {
         FirebaseUser user = auth.getCurrentUser();
         return user != null;
+    }
+
+    private void bindSaveButton() {
+        binding.infoSaveButton.setOnClickListener((v)->{
+            if(!checkLogin()) return;
+            String name = binding.nameEditText.getText().toString();
+            String email = auth.getCurrentUser().getEmail();
+            int age = Integer.parseInt(binding.ageEditText.getText().toString());
+            int checkedRadioButtonId = binding.sexSelectGroup.getCheckedRadioButtonId();
+            int sex = -1;
+            RadioButton br = (RadioButton) (findViewById(checkedRadioButtonId));
+            if (br.getTag().equals("m")) {
+                sex=1;
+            }else{
+                sex=2;
+            }
+            ChildUser childUser = new ChildUser(name,email,age,sex);
+            String key = auth.getCurrentUser().getUid();
+            registerUserInfo(childUser,key);
+        });
+    }
+
+    private void registerUserInfo(ChildUser user, String key) {
+        db.collection("users").document(key)
+                .set(user)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Log.d("upload!!", "DocumentSnapshot successfully written!");
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.w("upload!!", "Error writing document", e);
+                    }
+                });
     }
 
     private void bindLoginButton() {
