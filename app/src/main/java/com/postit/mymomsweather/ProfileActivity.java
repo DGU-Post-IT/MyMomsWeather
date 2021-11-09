@@ -47,6 +47,7 @@ public class ProfileActivity extends AppCompatActivity {
         initViews();
         bindLoginButton();
         bindParenRegisterActivityButton();
+        bindSaveButton();
 
     }
 
