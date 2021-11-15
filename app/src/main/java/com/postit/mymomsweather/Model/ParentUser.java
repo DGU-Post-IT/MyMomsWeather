@@ -7,6 +7,7 @@ public class ParentUser {
     String email;
     ArrayList<String> follower;
     ArrayList<String> requested;
+    String phone;
     int age;
     int sex;
 
@@ -14,9 +15,18 @@ public class ParentUser {
     }
 
 
-    public ParentUser(String name, String email, int age, int sex) {
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public ParentUser(String name, String email, String phone, int age, int sex) {
         this.name = name;
         this.email = email;
+        this.phone = phone;
         this.age = age;
         this.sex = sex;
         this.follower = new ArrayList<>();
