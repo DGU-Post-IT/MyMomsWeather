@@ -120,6 +120,12 @@
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="부모님과의 통화기록 보기"
+        android:id="@+id/btn_calllog"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
