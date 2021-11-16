@@ -9,6 +9,7 @@ public class CallRecord {
     Long duration;
 
     public CallRecord() {
+        duration = 0L;
     }
 
     public CallRecord(LocalDate date, boolean type, String phoneNumber, Long duration) {
