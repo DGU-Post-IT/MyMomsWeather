@@ -27,9 +27,13 @@ import com.prolificinteractive.materialcalendarview.DayViewDecorator;
 import com.prolificinteractive.materialcalendarview.DayViewFacade;
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
 import com.prolificinteractive.materialcalendarview.OnMonthChangedListener;
+import com.prolificinteractive.materialcalendarview.format.DateFormatTitleFormatter;
+import com.prolificinteractive.materialcalendarview.format.TitleFormatter;
 
 import org.threeten.bp.LocalDate;
+import org.threeten.bp.format.DateTimeFormatter;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -52,6 +56,13 @@ public class CalendarActivity extends AppCompatActivity {
         getParentList();
 
 
+        initCalendarView();
+
+    }
+
+    private void initCalendarView() {
+        binding.calendarView.setTitleFormatter(new DateFormatTitleFormatter(DateTimeFormatter.ofPattern("yyyy년 MM월")));
+
         binding.calendarView.addDecorator(new DayViewDecorator() {
             @Override
             public boolean shouldDecorate(CalendarDay day) {
@@ -62,11 +73,9 @@ public class CalendarActivity extends AppCompatActivity {
                     ){
                         return true;
                     }
-
                 }
                 return false;
             }
-
             @Override
             public void decorate(DayViewFacade view) {
                 view.setBackgroundDrawable(AppCompatResources.getDrawable(getApplicationContext(),R.drawable.ic_baseline_circle_24));
@@ -79,7 +88,6 @@ public class CalendarActivity extends AppCompatActivity {
                 widget.invalidateDecorators();
             }
         });
-
     }
 
     void getParentList(){

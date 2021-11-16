@@ -10,6 +10,15 @@ public class ParentUser {
     String phone;
     int age;
     int sex;
+    String callDuration;
+
+    public String getCallDuration() {
+        return callDuration;
+    }
+
+    public void setCallDuration(String callDuration) {
+        this.callDuration = callDuration;
+    }
 
     public ParentUser() {
     }
