@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:src="@drawable/ic_circle"
+        app:tint="#F7C9C1"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="10sp"
+        android:layout_marginHorizontal="4dp"
+        android:textColor="@color/black"
+        android:text="0~5분"/>
+
+    <ImageView
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:src="@drawable/ic_circle"
+        app:tint="#F2A193"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="10sp"
+        android:textColor="@color/black"
+        android:layout_marginHorizontal="4dp"
+        android:text="5~30분"/>
+
+    <ImageView
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:src="@drawable/ic_circle"
+        app:tint="#EF8774"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="4dp"
+        android:textColor="@color/black"
+        android:textSize="10sp"
+        android:text="30분~1시간"/>
+
+    <ImageView
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:src="@drawable/ic_circle"
+        app:tint="@color/pink"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="10sp"
+        android:layout_marginHorizontal="4dp"
+        android:textColor="@color/black"
+        android:text="1시간 이상"/>
+
+
+</LinearLayout>

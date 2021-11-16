@@ -56,7 +56,6 @@ public class ParentListActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        binding.getRoot().addView(tv);
 
     }
 }

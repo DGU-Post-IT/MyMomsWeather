@@ -49,10 +49,6 @@ public class ParentStatusActivity extends AppCompatActivity {
                         }
                     }
                 });
-
-
-
-
     }
     void addTextView(String id, String name){
         TextView tv = new TextView(this);
@@ -63,7 +59,6 @@ public class ParentStatusActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        binding.getRoot().addView(tv);
 
     }
 

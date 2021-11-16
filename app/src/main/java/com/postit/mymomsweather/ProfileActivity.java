@@ -1,5 +1,6 @@
 package com.postit.mymomsweather;
 
+import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -166,7 +167,9 @@ public class ProfileActivity extends AppCompatActivity {
         Intent signInIntent = AuthUI.getInstance()
                 .createSignInIntentBuilder()
                 .setAvailableProviders(providers)
+                .setIsSmartLockEnabled(false)
                 .build();
+
         signInLauncher.launch(signInIntent);
     }
 }
