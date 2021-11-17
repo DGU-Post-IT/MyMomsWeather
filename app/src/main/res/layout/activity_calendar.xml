@@ -63,7 +63,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:backgroundTint="@null"
-                    android:text="일간"
+                    android:text="오늘"
                     android:textColor='@{vm.selectedView==0? @color/pink:@color/black}' />
 
                 <Button
@@ -73,7 +73,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:backgroundTint="@null"
-                    android:text="주간"
+                    android:text="지난 7일"
                     android:textColor="@{vm.selectedView==1? @color/pink:@color/black}" />
 
                 <Button
@@ -83,7 +83,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:backgroundTint="@null"
-                    android:text="월간"
+                    android:text="이번 달"
                     android:textColor="@{vm.selectedView==2? @color/pink:@color/black}" />
 
             </LinearLayout>
@@ -181,7 +181,6 @@
                 <com.github.mikephil.charting.charts.PieChart
                     android:id="@+id/monthly_pie_chart"
                     android:layout_width="0dp"
-                    android:padding="4dp"
                     android:layout_height="match_parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/monthly_call_line_chart" />
