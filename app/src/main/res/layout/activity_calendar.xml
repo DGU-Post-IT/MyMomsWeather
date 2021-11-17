@@ -1,134 +1,195 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:tools="http://schemas.android.com/tools">
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/light_pink"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-
-    <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="vm"
+            type="com.postit.mymomsweather.CalendarViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_margin="16dp"
-        android:layout_height="0dp"
-        android:id="@+id/calendar_view"
-        app:mcv_selectionMode="none"
-        android:background="@drawable/radius_button"
-        android:backgroundTint="@color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0"
-        />
-    <include
-        layout="@layout/item_calendar_color_description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@id/calendar_view"
-        app:layout_constraintEnd_toEndOf="@id/calendar_view"
-        android:layout_margin="16dp"
-        />
+        android:layout_height="match_parent"
+        android:background="@color/light_pink">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        android:id="@+id/dummy_view"
-        android:background="@drawable/radius_button"
-        android:layout_margin="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0"
-        android:backgroundTint="@color/white"
-        app:layout_constraintTop_toBottomOf="@+id/calendar_view"
-        app:layout_constraintDimensionRatio="1.5:1"
-        >
-
-        <LinearLayout
-            android:id="@+id/button_panel_layout"
+        <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+            android:id="@+id/calendar_view"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/divider_view"
-            android:gravity="center_vertical"
-            >
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="일간"
-                android:layout_weight="1"
-                android:textColor="@color/black"
-                android:backgroundTint="@null"
-                style="?android:attr/borderlessButtonStyle"
-                />
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="주간"
-                android:layout_weight="1"
-                android:textColor="@color/black"
-                android:backgroundTint="@null"
-                style="?android:attr/borderlessButtonStyle"
-                />
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="월간"
-                android:layout_weight="1"
-                android:textColor="@color/black"
-                android:backgroundTint="@null"
-                style="?android:attr/borderlessButtonStyle"
-                />
-
-        </LinearLayout>
-
-        <View
-            android:id="@+id/divider_view"
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="@color/pink"
-            app:layout_constraintVertical_chainStyle="packed"
-            app:layout_constraintTop_toBottomOf="@id/button_panel_layout"
-            />
-
-        <View
-            android:layout_width="0dp"
             android:layout_height="0dp"
-            android:id="@+id/daily_call_line_chart"
+            android:layout_margin="16dp"
+            android:background="@drawable/radius_button"
+            android:backgroundTint="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/divider_view"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/daily_emotion_view"/>
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0"
+            app:mcv_selectionMode="none" />
 
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:id="@+id/daily_emotion_view"
-            app:layout_constraintTop_toBottomOf="@id/divider_view"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/daily_call_line_chart"
-            android:paddingHorizontal="26dp"
-            android:paddingBottom="32dp"
-            tools:src="@drawable/ic_baseline_block_24"
-            />
-
-        <TextView
-            android:id="@+id/daily_emotion_text_view"
+        <include
+            layout="@layout/item_calendar_color_description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="@+id/daily_emotion_view"
-            app:layout_constraintEnd_toEndOf="@id/daily_emotion_view"
-            app:layout_constraintBottom_toBottomOf="parent"
-            tools:text="화나요"
-            android:layout_marginVertical="10dp"
-            />
+            android:layout_margin="16dp"
+            app:layout_constraintBottom_toBottomOf="@id/calendar_view"
+            app:layout_constraintEnd_toEndOf="@id/calendar_view" />
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/dummy_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="16dp"
+            android:background="@drawable/radius_button"
+            android:backgroundTint="@color/white"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1.5:1"
+            app:layout_constraintTop_toBottomOf="@+id/calendar_view"
+            app:layout_constraintVertical_bias="0">
+
+            <LinearLayout
+                android:id="@+id/button_panel_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toTopOf="@id/divider_view"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <Button
+                    android:id="@+id/daily_panel_button"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@null"
+                    android:text="일간"
+                    android:textColor='@{vm.selectedView==0? @color/pink:@color/black}' />
+
+                <Button
+                    android:id="@+id/weekly_panel_button"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@null"
+                    android:text="주간"
+                    android:textColor="@{vm.selectedView==1? @color/pink:@color/black}" />
+
+                <Button
+                    android:id="@+id/monthly_panel_button"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@null"
+                    android:text="월간"
+                    android:textColor="@{vm.selectedView==2? @color/pink:@color/black}" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/divider_view"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/pink"
+                app:layout_constraintTop_toBottomOf="@id/button_panel_layout"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/daily_panel_layout"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:visibility="@{vm.selectedView==0?View.VISIBLE:View.GONE}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/divider_view">
+
+                <View
+                    android:id="@+id/daily_call_line_chart"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/daily_emotion_view"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/daily_emotion_view"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:paddingHorizontal="26dp"
+                    android:paddingBottom="32dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/daily_call_line_chart"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:src="@drawable/ic_baseline_block_24" />
+
+                <TextView
+                    android:id="@+id/daily_emotion_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/daily_emotion_view"
+                    app:layout_constraintStart_toStartOf="@+id/daily_emotion_view"
+                    tools:text="화나요" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/weekly_panel_layout"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:visibility="@{vm.selectedView==1?View.VISIBLE:View.GONE}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/divider_view">
+
+                <View
+                    android:id="@+id/weekly_call_line_chart"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/weekly_pie_chart"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.github.mikephil.charting.charts.PieChart
+                    android:id="@+id/weekly_pie_chart"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/weekly_call_line_chart" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/monthly_panel_layout"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:visibility="@{vm.selectedView==2?View.VISIBLE:View.GONE}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/divider_view">
+
+                <View
+                    android:id="@+id/monthly_call_line_chart"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/monthly_pie_chart"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.github.mikephil.charting.charts.PieChart
+                    android:id="@+id/monthly_pie_chart"
+                    android:layout_width="0dp"
+                    android:padding="4dp"
+                    android:layout_height="match_parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/monthly_call_line_chart" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
