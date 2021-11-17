@@ -136,7 +136,7 @@ public class CalendarActivity extends AppCompatActivity {
             @Override
             public void onChanged(ArrayList<EmotionRecord> emotionRecords) {
                 if (emotionRecords.size() != 0 &&
-                        emotionRecords.get(0).getTime().getTime() / 1000 / 60 / 60 / 24 == System.currentTimeMillis() / 1000 / 60 / 60 / 24) {
+                        emotionRecords.get(0).getTime().getTime() / 1000 / 60 / 60 / 24 == KoreanTime.koreaToday()) {
                     switch (emotionRecords.get(0).getEmotion()) {
                         case 0:
                             binding.dailyEmotionView.setImageResource(R.drawable.ic_outline_wb_sunny_24);
@@ -238,6 +238,8 @@ public class CalendarActivity extends AppCompatActivity {
             public void onChanged(HashMap<Long, Long> longLongHashMap) {
                 Log.d("calendar", "data change observed");
                 binding.calendarView.invalidateDecorators();
+
+                binding.dailyCallLineChart.setText(longLongHashMap.getOrDefault(KoreanTime.koreaToday(), 0L).toString());
             }
         });
     }

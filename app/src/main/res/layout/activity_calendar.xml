@@ -104,14 +104,16 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/divider_view">
 
-                <View
+                <TextView
                     android:id="@+id/daily_call_line_chart"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@id/daily_emotion_view"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:textSize="30dp"
+                    android:gravity="center"/>
 
                 <ImageView
                     android:id="@+id/daily_emotion_view"
@@ -144,7 +146,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/divider_view">
 
-                <View
+                <TextView
                     android:id="@+id/weekly_call_line_chart"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
@@ -169,7 +171,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/divider_view">
 
-                <View
+                <TextView
                     android:id="@+id/monthly_call_line_chart"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
