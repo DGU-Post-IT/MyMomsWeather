@@ -18,6 +18,7 @@ import android.widget.Button;
 
 import com.postit.mymomsweather.Model.EmotionRecord;
 import com.postit.mymomsweather.Model.ParentUser;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.postit.mymomsweather.databinding.ActivityMainBinding;
 
 import java.util.ArrayList;
