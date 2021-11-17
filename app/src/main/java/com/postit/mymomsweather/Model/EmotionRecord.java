@@ -32,4 +32,4 @@ public class EmotionRecord {
         this.time = time;
     }
 }
-}
+

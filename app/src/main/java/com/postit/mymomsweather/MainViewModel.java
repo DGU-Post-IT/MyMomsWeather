@@ -27,6 +27,7 @@ import com.postit.mymomsweather.Model.ParentUser;
 import org.threeten.bp.LocalDate;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class MainViewModel extends AndroidViewModel {
 
@@ -38,6 +39,7 @@ public class MainViewModel extends AndroidViewModel {
     FirebaseUser currentUser = null;
     MutableLiveData<EmotionRecord> latestEmotion = new MutableLiveData<EmotionRecord>();
     ListLiveData<ParentUser> parentUserListLiveData = new ListLiveData<>();
+    MutableLiveData<HashMap<Long,Long>> _dayCall =new MutableLiveData<>();
 
     public MainViewModel(Application application) {
         super(application);

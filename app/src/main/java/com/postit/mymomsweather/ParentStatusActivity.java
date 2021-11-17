@@ -62,10 +62,6 @@ public class ParentStatusActivity extends AppCompatActivity {
                             int a = temp.getEmotion();
                             emotion_arr[a]++;
 
-//                            long a = (long)doc.get("emotion");
-//                            Log.d("TAG", String.valueOf(a));
-//                            System.out.println(a);
-//                            emotion_arr[(int)a]++;
                         }
                     }
                     Log.d("TAG_arr", String.valueOf(emotion_arr[0]+ emotion_arr[1]+ emotion_arr[2]+ emotion_arr[3]));
