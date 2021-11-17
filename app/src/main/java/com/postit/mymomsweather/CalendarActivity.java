@@ -18,6 +18,7 @@ import androidx.lifecycle.ViewModelProvider;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
+import com.github.mikephil.charting.formatter.ValueFormatter;
 import com.postit.mymomsweather.Model.EmotionRecord;
 import com.postit.mymomsweather.databinding.ActivityCalendarBinding;
 import com.prolificinteractive.materialcalendarview.CalendarDay;
@@ -122,6 +123,12 @@ public class CalendarActivity extends AppCompatActivity {
                 pieDataSet.setColors(colorClassArray);
                 PieData pieData = new PieData(pieDataSet);
                 pieData.setValueTextSize(12);
+                pieData.setValueFormatter(new ValueFormatter() {
+                    @Override
+                    public String getFormattedValue(float value) {
+                        return String.valueOf((int)value);
+                    }
+                });
                 pieData.setValueTextColor(Color.WHITE);
                 binding.weeklyPieChart.setData(pieData);
                 binding.weeklyPieChart.invalidate();
