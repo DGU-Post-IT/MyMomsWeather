@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:tools="http://schemas.android.com/tools">
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -89,6 +89,39 @@
             android:background="@color/pink"
             app:layout_constraintVertical_chainStyle="packed"
             app:layout_constraintTop_toBottomOf="@id/button_panel_layout"
+            />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:id="@+id/daily_call_line_chart"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/divider_view"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/daily_emotion_view"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:id="@+id/daily_emotion_view"
+            app:layout_constraintTop_toBottomOf="@id/divider_view"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/daily_call_line_chart"
+            android:paddingHorizontal="26dp"
+            android:paddingBottom="32dp"
+            tools:src="@drawable/ic_baseline_block_24"
+            />
+
+        <TextView
+            android:id="@+id/daily_emotion_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@+id/daily_emotion_view"
+            app:layout_constraintEnd_toEndOf="@id/daily_emotion_view"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:text="화나요"
+            android:layout_marginVertical="10dp"
             />
 
 

@@ -13,6 +13,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.postit.mymomsweather.Model.EmotionRecord;
 import com.postit.mymomsweather.databinding.ActivityCalendarBinding;
 import com.prolificinteractive.materialcalendarview.CalendarDay;
 import com.prolificinteractive.materialcalendarview.DayViewDecorator;
@@ -23,6 +24,7 @@ import com.prolificinteractive.materialcalendarview.format.DateFormatTitleFormat
 
 import org.threeten.bp.format.DateTimeFormatter;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class CalendarActivity extends AppCompatActivity {
@@ -42,6 +44,36 @@ public class CalendarActivity extends AppCompatActivity {
         }
 
         model = new ViewModelProvider(this).get(CalendarViewModel.class);
+        model.emotionRecordList.observe(this, new Observer<ArrayList<EmotionRecord>>() {
+            @Override
+            public void onChanged(ArrayList<EmotionRecord> emotionRecords) {
+                if(emotionRecords.size()!=0&&
+                        emotionRecords.get(0).getTime().getTime()/ 1000 / 60 / 60 / 24 ==System.currentTimeMillis()/ 1000 / 60 / 60 / 24){
+                    switch (emotionRecords.get(0).getEmotion()){
+                        case 0:
+                            binding.dailyEmotionView.setImageResource(R.drawable.ic_outline_wb_sunny_24);
+                            binding.dailyEmotionTextView.setText("좋아요");
+                            break;
+                        case 1:
+                            binding.dailyEmotionView.setImageResource(R.drawable.ic_outline_cloud_24);
+                            binding.dailyEmotionTextView.setText("별로에요");
+                            break;
+                        case 2:
+                            binding.dailyEmotionView.setImageResource(R.drawable.ic_outline_bolt_24);
+                            binding.dailyEmotionTextView.setText("화나요");
+                            break;
+                        case 3:
+                            binding.dailyEmotionView.setImageResource(R.drawable.ic_outline_mode_night_24);
+                            binding.dailyEmotionTextView.setText("슬퍼요");
+                            break;
+                    }
+                }else{
+                    binding.dailyEmotionView.setImageResource(R.drawable.ic_baseline_block_24);
+                    binding.dailyEmotionTextView.setText("오늘의 기록이 없어요ㅜㅜ");
+                }
+
+            }
+        });
 
         initCalendarView();
 
@@ -58,10 +90,7 @@ public class CalendarActivity extends AppCompatActivity {
                 Log.d("calendar", String.valueOf(day.getDate().toEpochDay()));
                 if(model._dayCall.getValue() ==null) return false;
                 Long callDurationOnDay = model._dayCall.getValue().get(day.getDate().toEpochDay());
-                if (callDurationOnDay!=null&&callDurationOnDay>=3600) {
-                    return true;
-                }
-                return false;
+                return callDurationOnDay != null && callDurationOnDay >= 3600;
             }
             @Override
             public void decorate(DayViewFacade view) {
@@ -75,10 +104,7 @@ public class CalendarActivity extends AppCompatActivity {
                 Log.d("calendar", String.valueOf(day.getDate().toEpochDay()));
                 if(model._dayCall.getValue() ==null) return false;
                 Long callDurationOnDay = model._dayCall.getValue().get(day.getDate().toEpochDay());
-                if (callDurationOnDay!=null&&callDurationOnDay>=1800&&callDurationOnDay<3600) {
-                    return true;
-                }
-                return false;
+                return callDurationOnDay != null && callDurationOnDay >= 1800 && callDurationOnDay < 3600;
             }
             @Override
             public void decorate(DayViewFacade view) {
@@ -92,10 +118,7 @@ public class CalendarActivity extends AppCompatActivity {
                 Log.d("calendar", String.valueOf(day.getDate().toEpochDay()));
                 if(model._dayCall.getValue() ==null) return false;
                 Long callDurationOnDay = model._dayCall.getValue().get(day.getDate().toEpochDay());
-                if (callDurationOnDay!=null&&callDurationOnDay>=300&&callDurationOnDay<1800) {
-                    return true;
-                }
-                return false;
+                return callDurationOnDay != null && callDurationOnDay >= 300 && callDurationOnDay < 1800;
             }
             @Override
             public void decorate(DayViewFacade view) {
@@ -109,10 +132,7 @@ public class CalendarActivity extends AppCompatActivity {
                 Log.d("calendar", String.valueOf(day.getDate().toEpochDay()));
                 if(model._dayCall.getValue() ==null) return false;
                 Long callDurationOnDay = model._dayCall.getValue().get(day.getDate().toEpochDay());
-                if (callDurationOnDay!=null&&callDurationOnDay>=0&&callDurationOnDay<300) {
-                    return true;
-                }
-                return false;
+                return callDurationOnDay != null && callDurationOnDay >= 0 && callDurationOnDay < 300;
             }
             @Override
             public void decorate(DayViewFacade view) {
