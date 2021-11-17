@@ -26,12 +26,13 @@
                 android:id="@+id/header_text_view"
                 android:layout_width="wrap_content"
                 android:textColor="@color/black"
-                android:text="부모님의 오늘 날씨"
+                android:text="&lt;부모님의 오늘 날씨&gt;"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginStart="28dp"
                 android:layout_marginTop="14dp"
-                android:textSize="20sp"
+
+                android:textSize="26sp"
                 android:layout_height="wrap_content"/>
 
             <ImageView

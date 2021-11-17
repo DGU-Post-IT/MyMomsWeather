@@ -20,8 +20,9 @@ public class EmotionRecord {
         return emotion;
     }
 
-    public void setEmotion(int emotion) {
+    public EmotionRecord setEmotion(int emotion) {
         this.emotion = emotion;
+        return this;
     }
 
     public Date getTime() {

@@ -10,13 +10,14 @@
             android:id="@+id/name_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="18dp"
+            android:layout_marginVertical="32dp"
             android:text="이름"
             android:textAlignment="center"
             android:textColor="@color/black"
-            android:textSize="16sp"
+            android:textSize="26sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/duration_text_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -27,21 +28,12 @@
             android:text="통화기록"
             android:textAlignment="center"
             android:textColor="@color/black"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toStartOf="@id/call_column_text_view"
-            app:layout_constraintStart_toEndOf="@id/name_text_view"
+            android:textSize="26sp"
+            app:layout_constraintHorizontal_bias="0.8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/name_text_view" />
 
-        <ImageButton
-            android:id="@+id/call_column_text_view"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_baseline_call_24"
-            app:layout_constraintBottom_toBottomOf="@id/name_text_view"
-            app:layout_constraintDimensionRatio="2:1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/duration_text_view"
-            app:layout_constraintTop_toTopOf="@id/name_text_view" />
 
         <View
             android:layout_width="match_parent"
