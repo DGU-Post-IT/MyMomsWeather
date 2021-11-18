@@ -1,30 +1,22 @@
 package com.postit.mymomsweather;
 
-import android.Manifest;
 import android.app.Application;
 import android.content.Context;
-import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.provider.CallLog;
 import android.util.Log;
 
-import androidx.core.app.ActivityCompat;
 import androidx.lifecycle.AndroidViewModel;
-import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.ViewModel;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.postit.mymomsweather.Model.AudioRecord;
 import com.postit.mymomsweather.Model.CallRecord;
 import com.postit.mymomsweather.Model.EmotionRecord;
 import com.postit.mymomsweather.Model.ParentUser;
-
-import org.threeten.bp.LocalDate;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -54,7 +46,7 @@ public class MainViewModel extends AndroidViewModel {
         return latestEmotion;
     }
 
-    void fetchLatestEmotion(String parentID) {
+    void fetchTodayEmotion(String parentID) {
         db.collection("users").document(parentID)
                 .collection("emotionRecord").orderBy("time", Query.Direction.DESCENDING)
                 .limit(1)
@@ -64,8 +56,11 @@ public class MainViewModel extends AndroidViewModel {
                         for (QueryDocumentSnapshot doc :
                                 task.getResult()) {
                             EmotionRecord er = doc.toObject(EmotionRecord.class);
-                            latestEmotion.setValue(er);
-
+                            if(KoreanTime.toKoreaDay(er.getTime().getTime())==KoreanTime.koreaToday()){
+                                latestEmotion.setValue(er);
+                            }else{
+                                latestEmotion.setValue(er.setEmotion(4));
+                            }
                         }
                     }
                 });
@@ -101,7 +96,7 @@ public class MainViewModel extends AndroidViewModel {
                             parent.setCallDuration("0");
                             parentUserListLiveData.add(parent);
                         }
-                        fetchLatestEmotion(firstId);
+                        fetchTodayEmotion(firstId);
                         calcCallLogDuration();
 
                     }
@@ -116,7 +111,7 @@ public class MainViewModel extends AndroidViewModel {
         ArrayList<ParentUser> parentUsers = getParentUserListLiveData().getValue();
 
         Cursor c = context.getContentResolver().query(CallLog.Calls.CONTENT_URI, callSet,
-                null, null, null);
+                null, null, "date DESC");
         if (c.getCount() == 0) {
             return;
         }
@@ -126,6 +121,11 @@ public class MainViewModel extends AndroidViewModel {
             CallRecord temp = new CallRecord();
             String phoneNumber = c.getString(2);
             String duration = c.getString(3);
+            long callDate = c.getLong(0);
+            if(KoreanTime.koreaToday() - KoreanTime.toKoreaDay(callDate) > 7){
+                break;
+            }
+            Log.d("time",callDate+"");
             for (int i = 0; i < parentUsers.size(); i++) {
                 if(parentUsers.get(i).getPhone().equals(phoneNumber)){
                     String newDuration = String.valueOf(Long.parseLong(parentUsers.get(i).getCallDuration())+Long.parseLong(duration));

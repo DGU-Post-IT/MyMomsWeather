@@ -1,6 +1,7 @@
 package com.postit.mymomsweather;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
@@ -55,22 +56,27 @@ public class InfoBoardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
             if(er == null){
                 return;
             }
+            Log.d("emotion",er.getEmotion()+" ");
             switch (er.getEmotion()){
                 case 0:
-                    binding.weatherImageView.setImageResource(R.drawable.ic_outline_wb_sunny_24);
+                    binding.weatherImageView.setImageResource(R.drawable.ic_weather_good_shadow);
                     binding.weatherDescriptionTextView.setText("좋아요!");
                     break;
                 case 1:
-                    binding.weatherImageView.setImageResource(R.drawable.ic_outline_cloud_24);
+                    binding.weatherImageView.setImageResource(R.drawable.ic_weather_soso_shadow);
                     binding.weatherDescriptionTextView.setText("무기력해요");
                     break;
                 case 2:
-                    binding.weatherImageView.setImageResource(R.drawable.ic_outline_mode_night_24);
-                    binding.weatherDescriptionTextView.setText("슬퍼요");
+                    binding.weatherImageView.setImageResource(R.drawable.ic_weather_angry_shadow);
+                    binding.weatherDescriptionTextView.setText("화났어요");
                     break;
                 case 3:
-                    binding.weatherImageView.setImageResource(R.drawable.ic_outline_bolt_24);
-                    binding.weatherDescriptionTextView.setText("화나요");
+                    binding.weatherImageView.setImageResource(R.drawable.ic_weather_sad_shadow);
+                    binding.weatherDescriptionTextView.setText("슬퍼요");
+                    break;
+                default:
+                    binding.weatherImageView.setImageResource(R.drawable.ic_baseline_block_24);
+                    binding.weatherDescriptionTextView.setText("오늘 기록이 없어요 ㅜㅜ");
                     break;
 
             }

@@ -65,15 +65,15 @@ public class CalendarActivity extends AppCompatActivity {
     }
 
     private void bindPanelButton() {
-        binding.dailyPanelButton.setOnClickListener((v)->{
+        binding.dailyPanelButton.setOnClickListener((v) -> {
             model.selectedView.setValue(0);
             binding.invalidateAll();
         });
-        binding.weeklyPanelButton.setOnClickListener((v)->{
+        binding.weeklyPanelButton.setOnClickListener((v) -> {
             model.selectedView.setValue(1);
             binding.invalidateAll();
         });
-        binding.monthlyPanelButton.setOnClickListener((v)->{
+        binding.monthlyPanelButton.setOnClickListener((v) -> {
             model.selectedView.setValue(2);
             binding.invalidateAll();
         });
@@ -94,7 +94,7 @@ public class CalendarActivity extends AppCompatActivity {
                 monthlyData.add(new PieEntry(hm.getOrDefault(1, 0), "무기력"));
                 monthlyData.add(new PieEntry(hm.getOrDefault(2, 0), "화남"));
                 monthlyData.add(new PieEntry(hm.getOrDefault(3, 0), "슬픔"));
-                PieDataSet pieDataSet = new PieDataSet(monthlyData,"");
+                PieDataSet pieDataSet = new PieDataSet(monthlyData, "");
                 pieDataSet.setColors(colorClassArray);
                 PieData pieData = new PieData(pieDataSet);
                 pieData.setValueTextSize(12);
@@ -106,6 +106,7 @@ public class CalendarActivity extends AppCompatActivity {
         });
 
     }
+
     private void initWeeklyPanel() {
         binding.weeklyPieChart.setDrawEntryLabels(true);
         binding.weeklyPieChart.setUsePercentValues(false);
@@ -115,18 +116,26 @@ public class CalendarActivity extends AppCompatActivity {
             @Override
             public void onChanged(HashMap<Integer, Integer> hm) {
                 ArrayList<PieEntry> weeklyData = new ArrayList<>();
-                weeklyData.add(new PieEntry(hm.getOrDefault(0, 0), "행복"));
-                weeklyData.add(new PieEntry(hm.getOrDefault(1, 0), "무기력"));
-                weeklyData.add(new PieEntry(hm.getOrDefault(2, 0), "화남"));
-                weeklyData.add(new PieEntry(hm.getOrDefault(3, 0), "슬픔"));
-                PieDataSet pieDataSet = new PieDataSet(weeklyData,"");
+                if (hm.getOrDefault(0, 0) != 0) {
+                    weeklyData.add(new PieEntry(hm.getOrDefault(0, 0), "행복"));
+                }
+                if (hm.getOrDefault(1, 0) != 0) {
+                    weeklyData.add(new PieEntry(hm.getOrDefault(0, 0), "행복"));
+                }
+                if (hm.getOrDefault(2, 0) != 0) {
+                    weeklyData.add(new PieEntry(hm.getOrDefault(0, 0), "행복"));
+                }
+                if (hm.getOrDefault(3, 0) != 0) {
+                    weeklyData.add(new PieEntry(hm.getOrDefault(0, 0), "행복"));
+                }
+                PieDataSet pieDataSet = new PieDataSet(weeklyData, "");
                 pieDataSet.setColors(colorClassArray);
                 PieData pieData = new PieData(pieDataSet);
                 pieData.setValueTextSize(12);
                 pieData.setValueFormatter(new ValueFormatter() {
                     @Override
                     public String getFormattedValue(float value) {
-                        return String.valueOf((int)value);
+                        return String.valueOf((int) value);
                     }
                 });
                 pieData.setValueTextColor(Color.WHITE);
@@ -181,6 +190,7 @@ public class CalendarActivity extends AppCompatActivity {
                 Long callDurationOnDay = model._dayCall.getValue().get(day.getDate().toEpochDay());
                 return callDurationOnDay != null && callDurationOnDay >= 3600;
             }
+
             @Override
             public void decorate(DayViewFacade view) {
                 view.setBackgroundDrawable(AppCompatResources
