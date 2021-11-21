@@ -102,7 +102,7 @@ public class CalendarActivity extends AppCompatActivity {
             @Override
             public void onChanged(HashMap<Integer, Integer> hm) {
                 ArrayList<PieEntry> monthlyData = new ArrayList<>();
-                monthlyData.add(new PieEntry(hm.getOrDefault(0, 0), "행복"));
+                monthlyData.add(new PieEntry(hm.getOrDefault(0, 0), "좋음"));
                 monthlyData.add(new PieEntry(hm.getOrDefault(1, 0), "무기력"));
                 monthlyData.add(new PieEntry(hm.getOrDefault(2, 0), "화남"));
                 monthlyData.add(new PieEntry(hm.getOrDefault(3, 0), "슬픔"));
@@ -136,16 +136,16 @@ public class CalendarActivity extends AppCompatActivity {
             public void onChanged(HashMap<Integer, Integer> hm) {
                 ArrayList<PieEntry> weeklyData = new ArrayList<>();
                 if (hm.getOrDefault(0, 0) != 0) {
-                    weeklyData.add(new PieEntry(hm.getOrDefault(0, 0), "행복"));
+                    weeklyData.add(new PieEntry(hm.getOrDefault(0, 0), "좋음"));
                 }
                 if (hm.getOrDefault(1, 0) != 0) {
-                    weeklyData.add(new PieEntry(hm.getOrDefault(0, 0), "행복"));
+                    weeklyData.add(new PieEntry(hm.getOrDefault(1, 0), "무기력"));
                 }
                 if (hm.getOrDefault(2, 0) != 0) {
-                    weeklyData.add(new PieEntry(hm.getOrDefault(0, 0), "행복"));
+                    weeklyData.add(new PieEntry(hm.getOrDefault(2, 0), "화남"));
                 }
                 if (hm.getOrDefault(3, 0) != 0) {
-                    weeklyData.add(new PieEntry(hm.getOrDefault(0, 0), "행복"));
+                    weeklyData.add(new PieEntry(hm.getOrDefault(3, 0), "슬픔"));
                 }
                 PieDataSet pieDataSet = new PieDataSet(weeklyData, "");
                 pieDataSet.setColors(colorClassArray);
@@ -180,7 +180,7 @@ public class CalendarActivity extends AppCompatActivity {
                             break;
                         case 1:
                             binding.dailyEmotionView.setImageResource(R.drawable.ic_outline_cloud_24);
-                            binding.dailyEmotionTextView.setText("별로에요");
+                            binding.dailyEmotionTextView.setText("무기력해요");
                             break;
                         case 2:
                             binding.dailyEmotionView.setImageResource(R.drawable.ic_outline_bolt_24);
@@ -193,7 +193,7 @@ public class CalendarActivity extends AppCompatActivity {
                     }
                 } else {
                     binding.dailyEmotionView.setImageResource(R.drawable.ic_baseline_block_24);
-                    binding.dailyEmotionTextView.setText("오늘의 기록이 없어요");
+                    binding.dailyEmotionTextView.setText("     오늘의 \n기록이 없어요");
                 }
 
             }
