@@ -15,13 +15,14 @@
         <entry key="app/src/main/res/drawable/ic_goback.xml" value="0.2490740740740741" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.24722222222222223" />
         <entry key="app/src/main/res/drawable/ic_outline_mode_night_24.xml" value="0.23055555555555557" />
+        <entry key="app/src/main/res/drawable/id_input_text.xml" value="0.2490740740740741" />
         <entry key="app/src/main/res/drawable/radius_button.xml" value="0.23055555555555557" />
         <entry key="app/src/main/res/layout/activity_calendar.xml" value="0.2" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_parent_list.xml" value="0.1265625" />
         <entry key="app/src/main/res/layout/activity_parent_register.xml" value="0.1675925925925926" />
         <entry key="app/src/main/res/layout/activity_parent_status.xml" value="0.1265625" />
-        <entry key="app/src/main/res/layout/activity_profile.xml" value="0.1675925925925926" />
+        <entry key="app/src/main/res/layout/activity_profile.xml" value="0.165" />
         <entry key="app/src/main/res/layout/item_calendar_color_description.xml" value="0.335" />
         <entry key="app/src/main/res/layout/item_emotion_weather.xml" value="0.1962962962962963" />
         <entry key="app/src/main/res/layout/item_parent.xml" value="0.1265625" />
