@@ -253,7 +253,7 @@ public class CalendarActivity extends AppCompatActivity {
                 Log.d("calendar", String.valueOf(day.getDate().toEpochDay()));
                 if (model._dayCall.getValue() == null) return false;
                 Long callDurationOnDay = model._dayCall.getValue().get(day.getDate().toEpochDay());
-                return callDurationOnDay != null && callDurationOnDay >= 0 && callDurationOnDay < 300;
+                return callDurationOnDay != null && callDurationOnDay > 0 && callDurationOnDay < 300;
             }
 
             @Override
