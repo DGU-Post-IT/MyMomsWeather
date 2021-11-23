@@ -18,8 +18,10 @@ import com.postit.mymomsweather.Model.CallRecord;
 import com.postit.mymomsweather.Model.EmotionRecord;
 import com.postit.mymomsweather.Model.ParentUser;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Locale;
 
 public class MainViewModel extends AndroidViewModel {
 
@@ -122,10 +124,18 @@ public class MainViewModel extends AndroidViewModel {
             String phoneNumber = c.getString(2);
             String duration = c.getString(3);
             long callDate = c.getLong(0);
-            if(KoreanTime.koreaToday() - KoreanTime.toKoreaDay(callDate) > 7){
+//            if(KoreanTime.koreaToday() - KoreanTime.toKoreaDay(callDate) > 7){
+//                break;
+//            }
+
+            String callDate_month = new SimpleDateFormat("yyyy년 MM월", Locale.KOREAN).format(callDate+32400000);
+            long now = System.currentTimeMillis();
+            String now_month = new SimpleDateFormat("yyyy년 MM월", Locale.KOREAN).format(now+32400000);
+            if(!callDate_month.equals(now_month)){
                 break;
             }
-            Log.d("time",callDate+"");
+
+            Log.d("Monthly_time",callDate+"");
             for (int i = 0; i < parentUsers.size(); i++) {
                 if(parentUsers.get(i).getPhone().equals(phoneNumber)){
                     String newDuration = String.valueOf(Long.parseLong(parentUsers.get(i).getCallDuration())+Long.parseLong(duration));
