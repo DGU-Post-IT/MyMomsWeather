@@ -113,7 +113,7 @@ public class CalendarActivity extends AppCompatActivity {
                 pieData.setValueFormatter(new ValueFormatter() {
                     @Override
                     public String getFormattedValue(float value) {
-                        return value + "%";
+                        return String.format("%.2f",value) + "%";
                     }
                 });
                 pieData.setValueTextColor(Color.WHITE);
@@ -154,7 +154,7 @@ public class CalendarActivity extends AppCompatActivity {
                 pieData.setValueFormatter(new ValueFormatter() {
                     @Override
                     public String getFormattedValue(float value) {
-                        return value + "%";
+                        return String.format("%.2f",value) + "%";
                     }
                 });
 
