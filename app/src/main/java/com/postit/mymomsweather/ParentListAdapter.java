@@ -51,7 +51,10 @@ public class ParentListAdapter extends RecyclerView.Adapter<ParentListAdapter.Pa
         void bind(ParentUser parentUser){
             binding.nameTextView.setText(parentUser.getName());
             Long secs = Long.parseLong(parentUser.getCallDuration());
-            binding.durationTextView.setText(String.format("%02d:%02d:%02d", secs / 3600, (secs % 3600) / 60, secs % 60));
+            //binding.durationTextView.setText(String.format("%03d:%02d:%02d", secs / 3600, (secs % 3600) / 60, secs % 60));
+            long secs_mins = secs/60;
+            binding.progress.setProgress((int)secs_mins);
+            binding.progressTextview.setText(secs_mins+"분/"+"100분");
         }
     }
 
