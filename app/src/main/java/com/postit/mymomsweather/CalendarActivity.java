@@ -359,22 +359,56 @@ public class CalendarActivity extends AppCompatActivity {
 
                 ArrayList<Entry> values2 = new ArrayList<>();
 
-                long now = System.currentTimeMillis();
-                Date today_date = new Date(now);
-                SimpleDateFormat sdf_day = new SimpleDateFormat("dd");
-                int today_day = Integer.valueOf(sdf_day.format(today_date).toString());
-                Log.d("오늘 일", String.valueOf(today_day));
-                long first_day_of_this_month = now - 86400*1000*(today_day-1);
-                Date first_day = new Date(first_day_of_this_month);
-                int first_day_day = Integer.valueOf(sdf_day.format(first_day));
-                Log.d("이 달 1일", String.valueOf(first_day_day));
+//                long now = System.currentTimeMillis();
+//                Date today_date = new Date(now);
+//                SimpleDateFormat sdf_day = new SimpleDateFormat("dd");
+//                SimpleDateFormat sdf_entire = new SimpleDateFormat("yyyy-MM-dd");
+//                int today_day = Integer.valueOf(sdf_day.format(today_date).toString());
+//                Log.d("오늘 일", String.valueOf(today_day));
+//                Log.d("오늘 일", sdf_entire.format(today_date));
+//                long first_day_of_this_month = now - 86400*1000*(today_day-1);
+//                //long first_day_of_this_month = now - 86400*1000*(24);
+//                Date first_day = new Date(first_day_of_this_month);
+//                int first_day_day = Integer.valueOf(sdf_day.format(first_day));
+//                Log.d("이 달 1일", String.valueOf(first_day_day));
+//                Log.d("이 달 1일", sdf_entire.format(first_day));
                 //first_day_of_this_month += 32400000;
 
 
+                long now = System.currentTimeMillis();
+
+
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd_EE");
+                SimpleDateFormat sdf_day = new SimpleDateFormat("dd");
+
+                Date today = new Date(now);
+                Date first_day = new Date(today.getYear(), today.getMonth(), 1);
+                Log.d("today", today+"");
+                Log.d("first_day", first_day+"");
+
+                int today_day = Integer.valueOf(sdf_day.format(today).toString());
+
+                Log.d("today_day", today_day+"");
+                Log.d("today_sdf", sdf.format(today));
+
+                int first_day_day = Integer.valueOf(sdf_day.format(first_day).toString());
+                Log.d("first_day_day", first_day_day+"");
+                Log.d("first_day_sdf", sdf.format(first_day));
+
+
+
+
+
+
+
+
+
                 long[] monthly_arr = new long[today_day];
+                long first_day_epoch = first_day.getTime()/1000/60/60/24;
+                Log.d("first_day_epoch", first_day_epoch+"");
                 for(int i = 0; i < monthly_arr.length; i++){
-                    monthly_arr[i] = (longLongHashMap.getOrDefault(KoreanTime.toKoreaDay(first_day_of_this_month) + i, 0L))/60;
-                    //Log.d("monthly_arr", String.valueOf((longLongHashMap.getOrDefault(KoreanTime.toKoreaDay(first_day_of_this_month) + i, 0L))/60));
+                    monthly_arr[i] = (longLongHashMap.getOrDefault(first_day_epoch + i, 0L))/60;
+                    Log.d("monthly_arr", String.valueOf(first_day_epoch + i+(longLongHashMap.getOrDefault(first_day_epoch + i*1000*60*60*24, 0L))/60));
                 }
                 for (int i = 0; i < monthly_arr.length; i++) {
                     values2.add(new Entry(i, monthly_arr[i]));
