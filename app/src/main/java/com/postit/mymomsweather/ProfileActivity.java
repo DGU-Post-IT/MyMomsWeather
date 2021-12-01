@@ -57,7 +57,8 @@ public class ProfileActivity extends AppCompatActivity {
 
     private void bindSignUpButton() {
         binding.signUpButton.setOnClickListener((v)->{
-
+            Intent intent = new Intent(this,SignUpActivity.class);
+            startActivity(intent);
         });
     }
 
