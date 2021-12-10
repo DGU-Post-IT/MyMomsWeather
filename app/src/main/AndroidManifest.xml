@@ -28,6 +28,8 @@
         <activity android:name=".ParentListActivity"/>
         <activity android:name=".ParentStatusActivity"/>
         <activity android:name=".CalendarActivity"/>
+        <activity android:name=".SignUpActivity"/>
+        <activity android:name=".MyInfoActivity"/>
     </application>
 
 </manifest>

@@ -1,8 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:background="@color/light_gray"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/title_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="14dp"
+            android:text="이메일 주소 입략"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/name_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="8dp"
+            android:layout_marginStart="14dp"
+            android:text="이름"
+            android:textColor="@color/pink"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title_text_view" />
+
+        <EditText
+            android:id="@+id/id_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/gray_stroke_bg"
+            android:hint="아이디(이메일)"
+            android:inputType="textEmailAddress"
+            android:paddingStart="16dp"
+            android:textSize="20sp"
+            app:layout_constraintDimensionRatio="7:1"
+            app:layout_constraintTop_toBottomOf="@id/name_text_view"
+            app:layout_constraintVertical_bias="0.2" />
+
+        <TextView
+            android:id="@+id/password_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="8dp"
+            android:layout_marginStart="14dp"
+            android:text="비밀번호"
+            android:textColor="@color/pink"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/id_edit_text" />
+
+        <EditText
+            android:id="@+id/password_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/gray_stroke_bg"
+            android:hint="비밀번호"
+            android:inputType="textPassword"
+            android:paddingStart="16dp"
+            android:textSize="20sp"
+            app:layout_constraintDimensionRatio="7:1"
+            app:layout_constraintTop_toBottomOf="@id/password_text_view" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/login_button"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/login_button_enabled"
+            android:text="다음"
+            android:textColor="@color/white"
+            android:textSize="28sp"
+            app:layout_constraintDimensionRatio="6.5:1"
+            app:layout_constraintEnd_toEndOf="@id/password_edit_text"
+            app:layout_constraintStart_toStartOf="@id/password_edit_text"
+
+            app:layout_constraintTop_toBottomOf="@id/password_edit_text" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
