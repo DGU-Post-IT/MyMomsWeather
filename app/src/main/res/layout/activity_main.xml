@@ -99,7 +99,7 @@
         <View
             android:id="@+id/divider_view"
             android:layout_width="match_parent"
-            android:layout_height="1dp"
+            android:layout_height="5dp"
             android:background="@color/pink"
             app:layout_constraintBottom_toTopOf="@id/refresh_view"
             app:layout_constraintTop_toBottomOf="@id/name_column_text_view" />
@@ -150,7 +150,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="80dp"
                 android:orientation="vertical"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:focusable="true"
+                android:clickable="true">
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -174,7 +177,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="80dp"
                 android:orientation="vertical"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:focusable="true"
+                android:clickable="true">
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -198,7 +204,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="80dp"
                 android:orientation="vertical"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:focusable="true"
+                android:clickable="true">
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -222,7 +231,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="80dp"
                 android:orientation="vertical"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:focusable="true"
+                android:clickable="true">
 
                 <ImageView
                     android:layout_width="wrap_content"

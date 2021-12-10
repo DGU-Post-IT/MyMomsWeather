@@ -75,7 +75,7 @@ public class InfoBoardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
                     binding.weatherDescriptionTextView.setText("슬퍼요");
                     break;
                 default:
-                    binding.weatherImageView.setImageResource(R.drawable.ic_baseline_block_24);
+                    binding.weatherImageView.setImageResource(R.drawable.ic_weather_nono);
                     binding.weatherDescriptionTextView.setText("오늘 기록이 없어요");
                     break;
 

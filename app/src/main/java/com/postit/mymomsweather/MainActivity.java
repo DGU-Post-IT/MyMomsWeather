@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         binding = DataBindingUtil.setContentView(this,R.layout.activity_main);
         binding.setLifecycleOwner(this);
         model = new ViewModelProvider(this).get(MainViewModel.class);
+        getWindow().setWindowAnimations(0);
 
         binding.loginButton.setOnClickListener((v)->{
             Intent intent = new Intent(this,ProfileActivity.class);
