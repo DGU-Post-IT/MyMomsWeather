@@ -59,19 +59,19 @@ public class InfoBoardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
             Log.d("emotion",er.getEmotion()+" ");
             switch (er.getEmotion()){
                 case 0:
-                    binding.weatherImageView.setImageResource(R.drawable.ic_weather_good_shadow);
+                    binding.weatherImageView.setImageResource(R.drawable.ic_weather_good);
                     binding.weatherDescriptionTextView.setText("좋아요");
                     break;
                 case 1:
-                    binding.weatherImageView.setImageResource(R.drawable.ic_weather_soso_shadow);
+                    binding.weatherImageView.setImageResource(R.drawable.ic_weather_soso);
                     binding.weatherDescriptionTextView.setText("무기력해요");
                     break;
                 case 2:
-                    binding.weatherImageView.setImageResource(R.drawable.ic_weather_angry_shadow);
+                    binding.weatherImageView.setImageResource(R.drawable.ic_weather_angry);
                     binding.weatherDescriptionTextView.setText("화나요");
                     break;
                 case 3:
-                    binding.weatherImageView.setImageResource(R.drawable.ic_weather_sad_shadow);
+                    binding.weatherImageView.setImageResource(R.drawable.ic_weather_sad);
                     binding.weatherDescriptionTextView.setText("슬퍼요");
                     break;
                 default:

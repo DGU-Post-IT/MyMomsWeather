@@ -106,11 +106,13 @@ public class CalendarViewModel extends AndroidViewModel {
         do {
             if (c.getString(2).equals(phoneNumber.getValue())) {
                 long callData = c.getLong(0);
+                Date call_date = new Date(callData);
+                Log.d("call_date", call_date+"");
                 Long callDay = callData / 1000 / 60 / 60 / 24;
 
                 Long duration = Long.parseLong(c.getString(3));
                 hm.put(callDay, hm.getOrDefault(callDay, 0L) + duration);
-//                Log.d("calendar","Day" + String.valueOf(callDay)+" "+String.valueOf(hm.get(callDay)));
+                Log.d("Longlonghm","Day : " + String.valueOf(callDay)+" "+String.valueOf(hm.get(callDay)));
             }
 
         } while (c.moveToNext());
