@@ -52,6 +52,7 @@
 
                     android:paddingTop="12dp"
                     style="@android:style/Widget.ProgressBar.Horizontal"
+                    android:progressDrawable="@drawable/progressbar_style"
                     android:id="@+id/progress"
 
                     />

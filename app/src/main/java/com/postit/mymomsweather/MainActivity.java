@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        binding.detailViewButton.setOnClickListener((v)->{
+        binding.layoutGocalendar.setOnClickListener((v)->{
             Intent intent = new Intent(this,CalendarActivity.class);
             startActivity(intent);
         });

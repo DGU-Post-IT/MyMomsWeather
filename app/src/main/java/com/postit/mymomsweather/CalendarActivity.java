@@ -1,6 +1,7 @@
 package com.postit.mymomsweather;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -72,6 +73,14 @@ public class CalendarActivity extends AppCompatActivity {
         initCalendarView();
 
         model.fetchParentList();
+
+        binding.layoutGohome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(CalendarActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
@@ -175,24 +184,24 @@ public class CalendarActivity extends AppCompatActivity {
                         emotionRecords.get(0).getTime().getTime() / 1000 / 60 / 60 / 24 == KoreanTime.koreaToday()) {
                     switch (emotionRecords.get(0).getEmotion()) {
                         case 0:
-                            binding.dailyEmotionView.setImageResource(R.drawable.ic_outline_wb_sunny_24);
+                            binding.dailyEmotionView.setImageResource(R.drawable.ic_weather_good);
                             binding.dailyEmotionTextView.setText("좋아요");
                             break;
                         case 1:
-                            binding.dailyEmotionView.setImageResource(R.drawable.ic_outline_cloud_24);
+                            binding.dailyEmotionView.setImageResource(R.drawable.ic_weather_soso);
                             binding.dailyEmotionTextView.setText("무기력해요");
                             break;
                         case 2:
-                            binding.dailyEmotionView.setImageResource(R.drawable.ic_outline_bolt_24);
+                            binding.dailyEmotionView.setImageResource(R.drawable.ic_weather_angry);
                             binding.dailyEmotionTextView.setText("화나요");
                             break;
                         case 3:
-                            binding.dailyEmotionView.setImageResource(R.drawable.ic_outline_mode_night_24);
+                            binding.dailyEmotionView.setImageResource(R.drawable.ic_weather_sad);
                             binding.dailyEmotionTextView.setText("슬퍼요");
                             break;
                     }
                 } else {
-                    binding.dailyEmotionView.setImageResource(R.drawable.ic_baseline_block_24);
+                    binding.dailyEmotionView.setImageResource(R.drawable.ic_weather_nono);
                     binding.dailyEmotionTextView.setText("     오늘의 \n기록이 없어요");
                 }
 
