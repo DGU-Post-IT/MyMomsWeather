@@ -17,6 +17,7 @@
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.24722222222222223" />
         <entry key="app/src/main/res/drawable-v24/ic_weather_angry_shadow.xml" value="0.24537037037037038" />
         <entry key="app/src/main/res/drawable/detail_view_stroke_button.xml" value="0.14270833333333333" />
+        <entry key="app/src/main/res/drawable/gray_stroke_bg.xml" value="0.16203703703703703" />
         <entry key="app/src/main/res/drawable/ic_add_poeple.xml" value="0.2490740740740741" />
         <entry key="app/src/main/res/drawable/ic_baseline_call_24.xml" value="0.23703703703703705" />
         <entry key="app/src/main/res/drawable/ic_baseline_circle_24_0.xml" value="0.25555555555555554" />
@@ -28,12 +29,18 @@
         <entry key="app/src/main/res/drawable/ic_outline_mode_night_24.xml" value="0.23055555555555557" />
         <entry key="app/src/main/res/drawable/id_input_text.xml" value="0.2490740740740741" />
         <entry key="app/src/main/res/drawable/radius_button.xml" value="0.23055555555555557" />
+        <entry key="app/src/main/res/drawable/radius_sex_button.xml" value="0.14270833333333333" />
+        <entry key="app/src/main/res/drawable/sex_selector.xml" value="0.16203703703703703" />
+        <entry key="app/src/main/res/font/dx_font.xml" value="0.16203703703703703" />
+        <entry key="app/src/main/res/layout/acitivity_sign_up.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_calendar.xml" value="0.2" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_parent_list.xml" value="0.1265625" />
         <entry key="app/src/main/res/layout/activity_parent_register.xml" value="0.1675925925925926" />
         <entry key="app/src/main/res/layout/activity_parent_status.xml" value="0.1265625" />
         <entry key="app/src/main/res/layout/activity_profile.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.12129629629629629" />
+        <entry key="app/src/main/res/layout/activity_user_info_register.xml" value="0.12129629629629629" />
         <entry key="app/src/main/res/layout/item_calendar_color_description.xml" value="0.335" />
         <entry key="app/src/main/res/layout/item_emotion_weather.xml" value="0.1962962962962963" />
         <entry key="app/src/main/res/layout/item_parent.xml" value="0.1265625" />

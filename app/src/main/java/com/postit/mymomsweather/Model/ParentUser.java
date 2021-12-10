@@ -1,6 +1,7 @@
 package com.postit.mymomsweather.Model;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public class ParentUser {
     String name;
@@ -11,6 +12,24 @@ public class ParentUser {
     int age;
     int sex;
     String callDuration;
+    Date birthdate;
+    String fcm;
+
+    public Date getBirthdate() {
+        return birthdate;
+    }
+
+    public void setBirthdate(Date birthdate) {
+        this.birthdate = birthdate;
+    }
+
+    public String getFcm() {
+        return fcm;
+    }
+
+    public void setFcm(String fcm) {
+        this.fcm = fcm;
+    }
 
     public String getCallDuration() {
         return callDuration;
