@@ -278,7 +278,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="80dp"
                 android:orientation="vertical"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:focusable="true"
+                android:clickable="true">
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -302,7 +305,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="80dp"
                 android:orientation="vertical"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:focusable="true"
+                android:clickable="true">
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -326,7 +332,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="80dp"
                 android:orientation="vertical"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:focusable="true"
+                android:clickable="true">
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -350,7 +359,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="80dp"
                 android:orientation="vertical"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:focusable="true"
+                android:clickable="true">
 
                 <ImageView
                     android:layout_width="wrap_content"
