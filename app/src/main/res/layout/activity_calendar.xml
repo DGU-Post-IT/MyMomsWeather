@@ -313,7 +313,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
-                    android:src="@drawable/ic_menu_calendar"
+                    android:src="@drawable/ic_menu_calendar_col"
                     android:layout_gravity="center"/>
 
                 <TextView
