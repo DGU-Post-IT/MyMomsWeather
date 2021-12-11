@@ -18,9 +18,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.postit.mymomsweather.Model.AudioRecord;
 import com.postit.mymomsweather.Model.EmotionRecord;
-import com.postit.mymomsweather.Model.ParentUser;
 import com.postit.mymomsweather.databinding.ActivityParentStatusBinding;
 
 import java.util.ArrayList;
