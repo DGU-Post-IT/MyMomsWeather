@@ -12,6 +12,26 @@
         android:layout_height="match_parent"
         android:background="@color/light_pink">
 
+        <ImageView
+            android:id="@+id/logo_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:src="@drawable/ic_circle"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/divider_view2"/>
+
+
+        <View
+            android:id="@+id/divider_view2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_gravity="center"
+            android:background="#4D4D4D"
+            app:layout_constraintTop_toBottomOf="@+id/logo_image"
+            />
+
         <com.prolificinteractive.materialcalendarview.MaterialCalendarView
             android:id="@+id/calendar_view"
             android:layout_width="match_parent"
@@ -22,7 +42,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/divider_view2"
             app:layout_constraintVertical_bias="0"
             app:mcv_selectionMode="none" />
 
