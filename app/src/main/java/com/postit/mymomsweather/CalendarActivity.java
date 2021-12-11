@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
@@ -47,7 +48,10 @@ import java.util.Locale;
 
 public class CalendarActivity extends AppCompatActivity {
     final int CALL_LOG_READ_PERMISSION = 1000;
-    int[] colorClassArray = new int[]{Color.RED, Color.BLUE, Color.GRAY, Color.MAGENTA};
+    int[] colorClassArray = {Color.rgb(0xFF,0x99,0x9A), Color.rgb(0x53, 0x62, 0x8B),
+            Color.rgb(0xFF, 0xC0, 0x00), Color.rgb(0xA9, 0xD4, 0xDA)};
+
+    //int a = ContextCompat.getColor(getApplicationContext(), R.color.happy_pink);
 
     ActivityCalendarBinding binding;
 
@@ -81,6 +85,16 @@ public class CalendarActivity extends AppCompatActivity {
                 Intent intent = new Intent(CalendarActivity.this, MainActivity.class);
                 startActivity(intent);
             }
+        });
+
+        binding.layoutGocommunity.setOnClickListener((v)->{
+            Intent intent = new Intent(this,CommunityActivity.class);
+            startActivity(intent);
+        });
+
+        binding.layoutGogame.setOnClickListener((v)->{
+            Intent intent = new Intent(this,GameActivity.class);
+            startActivity(intent);
         });
 
     }
