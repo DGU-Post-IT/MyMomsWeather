@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
@@ -47,7 +48,9 @@ import java.util.Locale;
 
 public class CalendarActivity extends AppCompatActivity {
     final int CALL_LOG_READ_PERMISSION = 1000;
-    int[] colorClassArray = new int[]{Color.RED, Color.BLUE, Color.GRAY, Color.MAGENTA};
+    int[] colorClassArray;
+
+    //int a = ContextCompat.getColor(getApplicationContext(), R.color.happy_pink);
 
     ActivityCalendarBinding binding;
 
@@ -59,6 +62,10 @@ public class CalendarActivity extends AppCompatActivity {
         binding = ActivityCalendarBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         getWindow().setWindowAnimations(0);
+
+
+        colorClassArray = new int[]{ContextCompat.getColor(getApplicationContext(), R.color.happy_pink), ContextCompat.getColor(getApplicationContext(), R.color.soso_blue),
+                ContextCompat.getColor(getApplicationContext(), R.color.angry_yellow), ContextCompat.getColor(getApplicationContext(), R.color.sad_mint)};
 
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_CALL_LOG) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_CALL_LOG}, CALL_LOG_READ_PERMISSION);
@@ -81,6 +88,16 @@ public class CalendarActivity extends AppCompatActivity {
                 Intent intent = new Intent(CalendarActivity.this, MainActivity.class);
                 startActivity(intent);
             }
+        });
+
+        binding.layoutGocommunity.setOnClickListener((v)->{
+            Intent intent = new Intent(this,CommunityActivity.class);
+            startActivity(intent);
+        });
+
+        binding.layoutGogame.setOnClickListener((v)->{
+            Intent intent = new Intent(this,GameActivity.class);
+            startActivity(intent);
         });
 
     }

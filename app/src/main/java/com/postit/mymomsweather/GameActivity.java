@@ -7,17 +7,16 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
-import com.postit.mymomsweather.databinding.ActivityCalendarBinding;
 import com.postit.mymomsweather.databinding.ActivityCommunityBinding;
+import com.postit.mymomsweather.databinding.ActivityGameBinding;
 
-public class CommunityActivity extends AppCompatActivity {
+public class GameActivity extends AppCompatActivity {
 
-    ActivityCommunityBinding binding;
-
+    ActivityGameBinding binding;
 
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = DataBindingUtil.setContentView(this,R.layout.activity_community);
+        binding = DataBindingUtil.setContentView(this,R.layout.activity_game);
         setContentView(binding.getRoot());
         getWindow().setWindowAnimations(0);
 
@@ -33,12 +32,13 @@ public class CommunityActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        binding.layoutGogame.setOnClickListener((v)->{
-            Intent intent = new Intent(this,GameActivity.class);
+        binding.layoutGocommunity.setOnClickListener((v)->{
+            Intent intent = new Intent(this,CommunityActivity.class);
             startActivity(intent);
         });
 
+
+
+
     }
-
-
 }
