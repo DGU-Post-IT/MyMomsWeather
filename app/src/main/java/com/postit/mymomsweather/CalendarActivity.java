@@ -48,8 +48,7 @@ import java.util.Locale;
 
 public class CalendarActivity extends AppCompatActivity {
     final int CALL_LOG_READ_PERMISSION = 1000;
-    int[] colorClassArray = {Color.rgb(0xFF,0x99,0x9A), Color.rgb(0x53, 0x62, 0x8B),
-            Color.rgb(0xFF, 0xC0, 0x00), Color.rgb(0xA9, 0xD4, 0xDA)};
+    int[] colorClassArray;
 
     //int a = ContextCompat.getColor(getApplicationContext(), R.color.happy_pink);
 
@@ -63,6 +62,10 @@ public class CalendarActivity extends AppCompatActivity {
         binding = ActivityCalendarBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         getWindow().setWindowAnimations(0);
+
+
+        colorClassArray = new int[]{ContextCompat.getColor(getApplicationContext(), R.color.happy_pink), ContextCompat.getColor(getApplicationContext(), R.color.soso_blue),
+                ContextCompat.getColor(getApplicationContext(), R.color.angry_yellow), ContextCompat.getColor(getApplicationContext(), R.color.sad_mint)};
 
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_CALL_LOG) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_CALL_LOG}, CALL_LOG_READ_PERMISSION);
