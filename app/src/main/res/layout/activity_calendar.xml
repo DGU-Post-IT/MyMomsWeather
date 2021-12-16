@@ -84,7 +84,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:backgroundTint="@null"
-                    android:text="오늘"
+                    android:text="어제"
                     android:textColor='@{vm.selectedView==0? @color/pink:@color/black}' />
 
                 <Button
@@ -181,7 +181,7 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@id/daily_emotion_view"
                     app:layout_constraintStart_toStartOf="@+id/daily_emotion_view"
-                    tools:text="오늘의 기록이 없어요"
+                    tools:text="어제의 기록이 없어요"
                     android:textSize="20sp"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
 

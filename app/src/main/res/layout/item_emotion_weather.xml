@@ -26,7 +26,7 @@
                     android:id="@+id/header_text_view"
                     android:layout_width="wrap_content"
                     android:textColor="@color/black"
-                    android:text="부모님의 오늘 날씨"
+                    android:text="부모님의 어제 날씨"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"

@@ -39,6 +39,7 @@ import com.prolificinteractive.materialcalendarview.format.DateFormatTitleFormat
 
 import org.threeten.bp.format.DateTimeFormatter;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -195,12 +196,11 @@ public class CalendarActivity extends AppCompatActivity {
     }
 
     private void initDailyPanel() {
-        model.emotionRecordList.observe(this, new Observer<ArrayList<EmotionRecord>>() {
+        model.yesterdayEmotion.observe(this, new Observer<EmotionRecord>() {
             @Override
-            public void onChanged(ArrayList<EmotionRecord> emotionRecords) {
-                if (emotionRecords.size() != 0 &&
-                        emotionRecords.get(0).getTime().getTime() / 1000 / 60 / 60 / 24 == KoreanTime.koreaToday()) {
-                    switch (emotionRecords.get(0).getEmotion()) {
+            public void onChanged(EmotionRecord emotionRecords) {
+                if (emotionRecords != null) {
+                    switch (emotionRecords.getEmotion()) {
                         case 0:
                             binding.dailyEmotionView.setImageResource(R.drawable.ic_weather_good);
                             binding.dailyEmotionTextView.setText("좋아요");
@@ -217,10 +217,13 @@ public class CalendarActivity extends AppCompatActivity {
                             binding.dailyEmotionView.setImageResource(R.drawable.ic_weather_sad);
                             binding.dailyEmotionTextView.setText("슬퍼요");
                             break;
+                        default:
+                            binding.dailyEmotionView.setImageResource(R.drawable.ic_weather_nono);
+                            binding.dailyEmotionTextView.setText("     어제의 \n기록이 없어요");
                     }
                 } else {
                     binding.dailyEmotionView.setImageResource(R.drawable.ic_weather_nono);
-                    binding.dailyEmotionTextView.setText("     오늘의 \n기록이 없어요");
+                    binding.dailyEmotionTextView.setText("     어제의 \n기록이 없어요");
                 }
 
             }
@@ -302,15 +305,25 @@ public class CalendarActivity extends AppCompatActivity {
             public void onChanged(HashMap<Long, Long> longLongHashMap) {
                 Log.d("calendar", "data change observed");
                 binding.calendarView.invalidateDecorators();
-//오늘
+//어제
 
                 Date currentTime = Calendar.getInstance().getTime();
-                String date_text = new SimpleDateFormat("yyyy년 MM월 dd일 EE요일", Locale.KOREAN).format(currentTime);
-                binding.tvDescriptionDaily.setText(date_text);
+                SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy년 MM월 dd일 EE요일", Locale.KOREAN);
+                String date_text = sdf1.format(currentTime);
 
-                binding.todayTell.setText("오늘 통화시간");
+                Calendar c = Calendar.getInstance();
+                try {
+                    c.setTime(sdf1.parse(date_text));
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+                c.add(Calendar.DATE, -1);
 
-                long today_call = longLongHashMap.getOrDefault(KoreanTime.koreaToday(), 0L);
+                binding.tvDescriptionDaily.setText(sdf1.format(c.getTime()));
+
+                binding.todayTell.setText("어제 통화시간");
+
+                long today_call = longLongHashMap.getOrDefault(KoreanTime.koreaToday()-1, 0L);
                 String today_call_str = String.format("%02d:%02d:%02d", today_call/3600, today_call%3600/60, today_call%3600%60);
 //                String today_call_str = String.valueOf(today_call/3600) + ":" + String.valueOf(today_call%3600/60)
 //                        + ":" + String.valueOf(today_call%3600%60);
@@ -421,14 +434,6 @@ public class CalendarActivity extends AppCompatActivity {
                 int first_day_day = Integer.valueOf(sdf_day.format(first_day).toString());
                 Log.d("first_day_day", first_day_day+"");
                 Log.d("first_day_sdf", sdf.format(first_day));
-
-
-
-
-
-
-
-
 
                 long[] monthly_arr = new long[today_day];
                 long first_day_epoch = first_day.getTime()/1000/60/60/24;

@@ -34,6 +34,7 @@ public class CalendarViewModel extends AndroidViewModel {
     ListLiveData<EmotionRecord> emotionRecordList = new ListLiveData<>();
     MutableLiveData<String> phoneNumber = new MutableLiveData<>();
     MutableLiveData<String> parentID = new MutableLiveData<>();
+    MutableLiveData<EmotionRecord> yesterdayEmotion = new MutableLiveData<>(new EmotionRecord(4));
     public MutableLiveData<Integer> selectedView = new MutableLiveData<>();
 
     public CalendarViewModel(Application application) {
@@ -59,6 +60,9 @@ public class CalendarViewModel extends AndroidViewModel {
                             EmotionRecord er = doc.toObject(EmotionRecord.class);
                             int emotion =er.getEmotion();
                             emotionRecordList.add(er);
+                            if(er.getTime().getTime()/ 1000 / 60 / 60 / 24 == KoreanTime.koreaToday()-1){
+                                yesterdayEmotion.setValue(er);
+                            }
                             monthlyMap.put(emotion,monthlyMap.getOrDefault(emotion,0)+1);
                             if(today.getTime()-er.getTime().getTime()<1000*60*60*24*7){
                                 weeklyMap.put(emotion,weeklyMap.getOrDefault(emotion,0)+1);
@@ -84,7 +88,7 @@ public class CalendarViewModel extends AndroidViewModel {
                             ParentUser parent = doc.toObject(ParentUser.class);
                             this.phoneNumber.setValue(parent.getPhone());
                             parentID.setValue(doc.getId());
-                            Log.d("calendar", parent.toString());
+                            Log.d("parent", parent.toString());
                         }
                         fetchCallHistory();
                         fetchEmotionRecord();
