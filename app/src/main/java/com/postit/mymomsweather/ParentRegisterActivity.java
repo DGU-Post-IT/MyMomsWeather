@@ -65,6 +65,7 @@ public class ParentRegisterActivity extends AppCompatActivity {
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 String parentID = document.getId();
                                 addRequestToParent(parentID);
+                                Toast.makeText(getApplicationContext(), "요청이 전송되었습니다!", Toast.LENGTH_SHORT).show();
                             }
 
                         } else {
@@ -75,8 +76,9 @@ public class ParentRegisterActivity extends AppCompatActivity {
     }
 
     private void addRequestToParent(String parentID) {
+        String data = auth.getCurrentUser().getEmail();
         db.collection("users").document(parentID)
-                .update("requested", FieldValue.arrayUnion(auth.getCurrentUser().getUid()));
+                .update("requested", FieldValue.arrayUnion(data));
 
     }
 }

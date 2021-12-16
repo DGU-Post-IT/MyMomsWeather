@@ -48,18 +48,19 @@ public class MainViewModel extends AndroidViewModel {
         return latestEmotion;
     }
 
-    void fetchTodayEmotion(String parentID) {
+    void fetchYesterdayEmotion(String parentID) {
         db.collection("users").document(parentID)
                 .collection("emotionRecord").orderBy("time", Query.Direction.DESCENDING)
-                .limit(1)
+                .limit(2)
                 .get()
                 .addOnCompleteListener((task) -> {
                     if (task.isSuccessful()) {
                         for (QueryDocumentSnapshot doc :
                                 task.getResult()) {
                             EmotionRecord er = doc.toObject(EmotionRecord.class);
-                            if(KoreanTime.toKoreaDay(er.getTime().getTime())==KoreanTime.koreaToday()){
+                            if(KoreanTime.toKoreaDay(er.getTime().getTime())==KoreanTime.koreaToday()-1){
                                 latestEmotion.setValue(er);
+                                break;
                             }else{
                                 latestEmotion.setValue(er.setEmotion(4));
                             }
@@ -83,7 +84,7 @@ public class MainViewModel extends AndroidViewModel {
             return;
         }
         db.collection("users")
-                .whereArrayContains("follower", auth.getCurrentUser().getUid())
+                .whereArrayContains("follower", auth.getCurrentUser().getEmail())
                 .get()
                 .addOnCompleteListener((task) -> {
                     if (task.isSuccessful()) {
@@ -98,7 +99,7 @@ public class MainViewModel extends AndroidViewModel {
                             parent.setCallDuration("0");
                             parentUserListLiveData.add(parent);
                         }
-                        fetchTodayEmotion(firstId);
+                        fetchYesterdayEmotion(firstId);
                         calcCallLogDuration();
 
                     }

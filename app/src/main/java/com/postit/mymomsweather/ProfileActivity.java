@@ -53,8 +53,16 @@ public class ProfileActivity extends AppCompatActivity {
         bindLoginButton();
         bindSignUpButton();
         bindInfoRegisterButton();
+        bindParentFindButton();
 //        timepicker_set();
 
+    }
+
+    private void bindParentFindButton() {
+        binding.parentFindButton.setOnClickListener((v)->{
+            Intent intent = new Intent(this, ParentRegisterActivity.class);
+            startActivity(intent);
+        });
     }
 
     private void bindInfoRegisterButton() {
@@ -94,7 +102,7 @@ public class ProfileActivity extends AppCompatActivity {
             binding.passwordEditText.setEnabled(true);
             binding.idEditText.setText("");
             binding.accountButtonLayout.setVisibility(View.VISIBLE);
-            binding.registerUserInfoButton.setVisibility(View.GONE);
+            binding.accountInfoButtonLayout.setVisibility(View.GONE);
             binding.passwordEditText.setText("");
             binding.loginButton.setText("로그인");
         } else {
@@ -102,7 +110,7 @@ public class ProfileActivity extends AppCompatActivity {
             binding.idEditText.setEnabled(false);
             binding.passwordEditText.setText("******");
             binding.passwordEditText.setEnabled(false);
-            binding.registerUserInfoButton.setVisibility(View.VISIBLE);
+            binding.accountInfoButtonLayout.setVisibility(View.VISIBLE);
             binding.accountButtonLayout.setVisibility(View.GONE);
             binding.loginButton.setText("로그아웃");
         }
