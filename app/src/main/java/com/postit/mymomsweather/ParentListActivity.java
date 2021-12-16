@@ -33,7 +33,7 @@ public class ParentListActivity extends AppCompatActivity {
 
     void getParentList(){
         db.collection("users")
-                .whereArrayContains("follower",auth.getCurrentUser().getUid())
+                .whereArrayContains("follower",auth.getCurrentUser().getEmail())
                 .get()
                 .addOnCompleteListener((task)->{
                     if(task.isSuccessful()){

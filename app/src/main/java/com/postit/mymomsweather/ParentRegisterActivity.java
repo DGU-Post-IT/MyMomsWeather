@@ -75,8 +75,9 @@ public class ParentRegisterActivity extends AppCompatActivity {
     }
 
     private void addRequestToParent(String parentID) {
+        String data = auth.getCurrentUser().getEmail();
         db.collection("users").document(parentID)
-                .update("requested", FieldValue.arrayUnion(auth.getCurrentUser().getUid()));
+                .update("requested", FieldValue.arrayUnion(data));
 
     }
 }

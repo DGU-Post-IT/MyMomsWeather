@@ -83,7 +83,7 @@ public class MainViewModel extends AndroidViewModel {
             return;
         }
         db.collection("users")
-                .whereArrayContains("follower", auth.getCurrentUser().getUid())
+                .whereArrayContains("follower", auth.getCurrentUser().getEmail())
                 .get()
                 .addOnCompleteListener((task) -> {
                     if (task.isSuccessful()) {

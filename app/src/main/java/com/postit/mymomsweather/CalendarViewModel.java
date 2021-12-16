@@ -75,7 +75,7 @@ public class CalendarViewModel extends AndroidViewModel {
     void fetchParentList() {
         if(auth.getCurrentUser()==null)return;
         db.collection("users")
-                .whereArrayContains("follower", auth.getCurrentUser().getUid())
+                .whereArrayContains("follower", auth.getCurrentUser().getEmail())
                 .get()
                 .addOnCompleteListener((task) -> {
                     if (task.isSuccessful()) {
