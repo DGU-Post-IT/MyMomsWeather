@@ -1,4 +1,4 @@
-package com.postit.mymomsweather;
+package com.postit.mymomsweather.presentation.parentregister;
 
 import android.os.Bundle;
 import android.util.Log;

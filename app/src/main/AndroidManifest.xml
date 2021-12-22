@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyMomsWeather">
         <activity
-            android:name=".MainActivity"
+            android:name=".presentation.main.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,15 +23,13 @@
 
             </intent-filter>
         </activity>
-        <activity android:name=".ParentRegisterActivity"/>
-        <activity android:name=".ProfileActivity"/>
-        <activity android:name=".ParentListActivity"/>
-        <activity android:name=".ParentStatusActivity"/>
-        <activity android:name=".CalendarActivity"/>
-        <activity android:name=".CommunityActivity"/>
-        <activity android:name=".GameActivity"/>
-        <activity android:name=".SignUpActivity"/>
-        <activity android:name=".MyInfoActivity"/>
+        <activity android:name=".presentation.parentregister.ParentRegisterActivity"/>
+        <activity android:name=".presentation.profile.ProfileActivity"/>
+        <activity android:name=".presentation.calendar.CalendarActivity"/>
+        <activity android:name=".presentation.community.CommunityActivity"/>
+        <activity android:name=".presentation.game.GameActivity"/>
+        <activity android:name=".presentation.signup.SignUpActivity"/>
+        <activity android:name=".presentation.myinfo.MyInfoActivity"/>
     </application>
 
 </manifest>

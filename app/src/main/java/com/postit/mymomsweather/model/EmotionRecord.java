@@ -1,4 +1,4 @@
-package com.postit.mymomsweather.Model;
+package com.postit.mymomsweather.model;
 
 import com.google.firebase.firestore.ServerTimestamp;
 

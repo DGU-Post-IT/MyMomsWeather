@@ -1,37 +1,25 @@
-package com.postit.mymomsweather;
+package com.postit.mymomsweather.presentation.profile;
 
-import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.RadioButton;
 import android.widget.Toast;
 
-import androidx.activity.result.ActivityResultCallback;
-import androidx.activity.result.ActivityResultLauncher;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.firebase.ui.auth.AuthUI;
-import com.firebase.ui.auth.FirebaseAuthUIActivityResultContract;
-import com.firebase.ui.auth.IdpResponse;
-import com.firebase.ui.auth.data.model.FirebaseAuthUIAuthenticationResult;
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.postit.mymomsweather.Model.ChildUser;
-import com.postit.mymomsweather.Model.ParentUser;
+import com.postit.mymomsweather.presentation.myinfo.MyInfoActivity;
+import com.postit.mymomsweather.presentation.parentregister.ParentRegisterActivity;
 import com.postit.mymomsweather.databinding.ActivityProfileBinding;
-
-import java.util.Arrays;
-import java.util.List;
+import com.postit.mymomsweather.presentation.signup.SignUpActivity;
 
 public class ProfileActivity extends AppCompatActivity {
 

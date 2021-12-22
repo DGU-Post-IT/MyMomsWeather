@@ -1,28 +1,23 @@
-package com.postit.mymomsweather;
+package com.postit.mymomsweather.presentation.main;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.postit.mymomsweather.Model.ParentUser;
+import com.postit.mymomsweather.model.ParentUser;
 import com.postit.mymomsweather.databinding.ItemParentDurationCallBinding;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class ParentListAdapter extends RecyclerView.Adapter<ParentListAdapter.ParentCallInfoViewHolder> {
 
     ArrayList<ParentUser> data = new ArrayList<>();
     Context mContext;
 
-    ParentListAdapter(Context context){
+    public ParentListAdapter(Context context){
         mContext=context;
     }
 
@@ -58,7 +53,7 @@ public class ParentListAdapter extends RecyclerView.Adapter<ParentListAdapter.Pa
         }
     }
 
-    void setItem(ArrayList<ParentUser> data){
+    public void setItem(ArrayList<ParentUser> data){
         this.data = data;
         notifyDataSetChanged();
     }

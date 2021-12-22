@@ -1,4 +1,4 @@
-package com.postit.mymomsweather;
+package com.postit.mymomsweather.presentation.main;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,19 +7,20 @@ import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 
-import com.postit.mymomsweather.Model.EmotionRecord;
-import com.postit.mymomsweather.Model.ParentUser;
-import com.google.firebase.firestore.FirebaseFirestore;
+import com.postit.mymomsweather.presentation.community.CommunityActivity;
+import com.postit.mymomsweather.presentation.game.GameActivity;
+import com.postit.mymomsweather.presentation.profile.ProfileActivity;
+import com.postit.mymomsweather.R;
+import com.postit.mymomsweather.model.EmotionRecord;
+import com.postit.mymomsweather.model.ParentUser;
 import com.postit.mymomsweather.databinding.ActivityMainBinding;
+import com.postit.mymomsweather.presentation.calendar.CalendarActivity;
 
 import java.util.ArrayList;
 
@@ -33,28 +34,28 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = DataBindingUtil.setContentView(this,R.layout.activity_main);
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         binding.setLifecycleOwner(this);
         model = new ViewModelProvider(this).get(MainViewModel.class);
         getWindow().setWindowAnimations(0);
 
         binding.loginButton.setOnClickListener((v)->{
-            Intent intent = new Intent(this,ProfileActivity.class);
+            Intent intent = new Intent(this, ProfileActivity.class);
             startActivity(intent);
         });
 
         binding.layoutGocalendar.setOnClickListener((v)->{
-            Intent intent = new Intent(this,CalendarActivity.class);
+            Intent intent = new Intent(this, CalendarActivity.class);
             startActivity(intent);
         });
 
         binding.layoutGocommunity.setOnClickListener((v)->{
-            Intent intent = new Intent(this,CommunityActivity.class);
+            Intent intent = new Intent(this, CommunityActivity.class);
             startActivity(intent);
         });
 
         binding.layoutGogame.setOnClickListener((v)->{
-            Intent intent = new Intent(this,GameActivity.class);
+            Intent intent = new Intent(this, GameActivity.class);
             startActivity(intent);
         });
 

@@ -1,4 +1,4 @@
-package com.postit.mymomsweather;
+package com.postit.mymomsweather.presentation.myinfo;
 
 import android.os.Bundle;
 import android.text.Editable;
@@ -18,7 +18,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.SetOptions;
 import com.google.firebase.messaging.FirebaseMessaging;
-import com.postit.mymomsweather.Model.ParentUser;
+import com.postit.mymomsweather.model.ParentUser;
 import com.postit.mymomsweather.databinding.ActivityUserInfoRegisterBinding;
 
 import java.util.Date;
