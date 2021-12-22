@@ -5,9 +5,9 @@
       <map>
         <entry key="..\:/Users/CNH/AndroidStudioProjects/MyMomsWeather/app/src/main/res/drawable/ic_outline_wb_sunny_24.xml" value="0.23177083333333334" />
         <entry key="..\:/Users/CNH/AndroidStudioProjects/MyMomsWeather/app/src/main/res/drawable/progressbar_style.xml" value="0.23177083333333334" />
-        <entry key="..\:/Users/CNH/AndroidStudioProjects/MyMomsWeather/app/src/main/res/layout/activity_calendar.xml" value="0.22291666666666668" />
+        <entry key="..\:/Users/CNH/AndroidStudioProjects/MyMomsWeather/app/src/main/res/layout/activity_calendar.xml" value="0.25" />
         <entry key="..\:/Users/CNH/AndroidStudioProjects/MyMomsWeather/app/src/main/res/layout/activity_calllog.xml" value="0.14628623188405798" />
-        <entry key="..\:/Users/CNH/AndroidStudioProjects/MyMomsWeather/app/src/main/res/layout/activity_community.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/CNH/AndroidStudioProjects/MyMomsWeather/app/src/main/res/layout/activity_community.xml" value="0.21145833333333333" />
         <entry key="..\:/Users/CNH/AndroidStudioProjects/MyMomsWeather/app/src/main/res/layout/activity_game.xml" value="0.21145833333333333" />
         <entry key="..\:/Users/CNH/AndroidStudioProjects/MyMomsWeather/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/CNH/AndroidStudioProjects/MyMomsWeather/app/src/main/res/layout/activity_parent_list.xml" value="0.16875" />
@@ -31,6 +31,9 @@
         <entry key="app/src/main/res/drawable/id_input_text.xml" value="0.2490740740740741" />
         <entry key="app/src/main/res/drawable/radius_button.xml" value="0.23055555555555557" />
         <entry key="app/src/main/res/layout/activity_calendar.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/activity_calllog.xml" value="0.1265625" />
+        <entry key="app/src/main/res/layout/activity_community.xml" value="0.14074074074074075" />
+        <entry key="app/src/main/res/layout/activity_game.xml" value="0.14074074074074075" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_parent_list.xml" value="0.1265625" />
         <entry key="app/src/main/res/layout/activity_parent_register.xml" value="0.1675925925925926" />

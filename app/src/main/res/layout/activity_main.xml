@@ -8,7 +8,7 @@
 
         <variable
             name="vm"
-            type="com.postit.mymomsweather.MainViewModel" />
+            type="com.postit.mymomsweather.presentation.main.MainViewModel" />
     </data>
 
 
@@ -18,7 +18,7 @@
         android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="vertical"
-        tools:context=".MainActivity"
+        tools:context=".presentation.main.MainActivity"
         tools:ignore="MissingClass"
         android:background="#F2F3F4">
 

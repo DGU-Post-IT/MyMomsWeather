@@ -1,4 +1,4 @@
-package com.postit.mymomsweather;
+package com.postit.mymomsweather.presentation.calendar;
 
 import android.Manifest;
 import android.content.Intent;
@@ -25,10 +25,14 @@ import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
-import com.github.mikephil.charting.formatter.PercentFormatter;
 import com.github.mikephil.charting.formatter.ValueFormatter;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
-import com.postit.mymomsweather.Model.EmotionRecord;
+import com.postit.mymomsweather.presentation.community.CommunityActivity;
+import com.postit.mymomsweather.presentation.game.GameActivity;
+import com.postit.mymomsweather.util.KoreanTime;
+import com.postit.mymomsweather.presentation.main.MainActivity;
+import com.postit.mymomsweather.R;
+import com.postit.mymomsweather.model.EmotionRecord;
 import com.postit.mymomsweather.databinding.ActivityCalendarBinding;
 import com.prolificinteractive.materialcalendarview.CalendarDay;
 import com.prolificinteractive.materialcalendarview.DayViewDecorator;
@@ -92,12 +96,12 @@ public class CalendarActivity extends AppCompatActivity {
         });
 
         binding.layoutGocommunity.setOnClickListener((v)->{
-            Intent intent = new Intent(this,CommunityActivity.class);
+            Intent intent = new Intent(this, CommunityActivity.class);
             startActivity(intent);
         });
 
         binding.layoutGogame.setOnClickListener((v)->{
-            Intent intent = new Intent(this,GameActivity.class);
+            Intent intent = new Intent(this, GameActivity.class);
             startActivity(intent);
         });
 

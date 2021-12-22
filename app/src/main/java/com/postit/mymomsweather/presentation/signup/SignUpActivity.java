@@ -1,8 +1,7 @@
-package com.postit.mymomsweather;
+package com.postit.mymomsweather.presentation.signup;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -13,7 +12,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.postit.mymomsweather.databinding.ActivityProfileBinding;
+import com.postit.mymomsweather.presentation.myinfo.MyInfoActivity;
 import com.postit.mymomsweather.databinding.ActivitySignUpBinding;
 
 public class SignUpActivity extends AppCompatActivity {
@@ -61,7 +60,7 @@ public class SignUpActivity extends AppCompatActivity {
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if(task.isSuccessful()){
                         Toast.makeText(getApplicationContext(),"계정을 성공적으로 생성하였습니다.",Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(getApplicationContext(),MyInfoActivity.class);
+                        Intent intent = new Intent(getApplicationContext(), MyInfoActivity.class);
                         startActivity(intent);
                         finish();
                     }else{

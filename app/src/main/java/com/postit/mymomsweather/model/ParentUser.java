@@ -1,4 +1,4 @@
-package com.postit.mymomsweather.Model;
+package com.postit.mymomsweather.model;
 
 import java.util.ArrayList;
 import java.util.Date;

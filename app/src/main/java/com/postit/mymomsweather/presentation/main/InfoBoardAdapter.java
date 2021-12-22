@@ -1,4 +1,4 @@
-package com.postit.mymomsweather;
+package com.postit.mymomsweather.presentation.main;
 
 import android.content.Context;
 import android.util.Log;
@@ -8,7 +8,8 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.postit.mymomsweather.Model.EmotionRecord;
+import com.postit.mymomsweather.R;
+import com.postit.mymomsweather.model.EmotionRecord;
 import com.postit.mymomsweather.databinding.ItemEmotionWeatherBinding;
 
 import java.util.ArrayList;

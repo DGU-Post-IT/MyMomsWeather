@@ -1,4 +1,4 @@
-package com.postit.mymomsweather;
+package com.postit.mymomsweather.presentation.main;
 
 import android.app.Application;
 import android.content.Context;
@@ -14,9 +14,11 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.postit.mymomsweather.Model.CallRecord;
-import com.postit.mymomsweather.Model.EmotionRecord;
-import com.postit.mymomsweather.Model.ParentUser;
+import com.postit.mymomsweather.util.KoreanTime;
+import com.postit.mymomsweather.ListLiveData;
+import com.postit.mymomsweather.model.CallRecord;
+import com.postit.mymomsweather.model.EmotionRecord;
+import com.postit.mymomsweather.model.ParentUser;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -99,6 +101,7 @@ public class MainViewModel extends AndroidViewModel {
                             parent.setCallDuration("0");
                             parentUserListLiveData.add(parent);
                         }
+                        if(firstId==null) return;
                         fetchYesterdayEmotion(firstId);
                         calcCallLogDuration();
 
