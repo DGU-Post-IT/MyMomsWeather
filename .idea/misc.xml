@@ -27,6 +27,7 @@
         <entry key="app/src/main/res/drawable/ic_circle.xml" value="0.22592592592592592" />
         <entry key="app/src/main/res/drawable/ic_goback.xml" value="0.2490740740740741" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.24722222222222223" />
+        <entry key="app/src/main/res/drawable/ic_menu_community.xml" value="0.26510416666666664" />
         <entry key="app/src/main/res/drawable/ic_outline_mode_night_24.xml" value="0.23055555555555557" />
         <entry key="app/src/main/res/drawable/id_input_text.xml" value="0.2490740740740741" />
         <entry key="app/src/main/res/drawable/radius_button.xml" value="0.23055555555555557" />
@@ -34,7 +35,7 @@
         <entry key="app/src/main/res/layout/activity_calllog.xml" value="0.1265625" />
         <entry key="app/src/main/res/layout/activity_community.xml" value="0.14074074074074075" />
         <entry key="app/src/main/res/layout/activity_game.xml" value="0.14074074074074075" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.24841707153083245" />
         <entry key="app/src/main/res/layout/activity_parent_list.xml" value="0.1265625" />
         <entry key="app/src/main/res/layout/activity_parent_register.xml" value="0.1675925925925926" />
         <entry key="app/src/main/res/layout/activity_parent_status.xml" value="0.1265625" />
