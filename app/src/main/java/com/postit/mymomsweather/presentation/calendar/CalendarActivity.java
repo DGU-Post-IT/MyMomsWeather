@@ -95,11 +95,6 @@ public class CalendarActivity extends AppCompatActivity {
             }
         });
 
-        binding.layoutGocommunity.setOnClickListener((v)->{
-            Intent intent = new Intent(this, CommunityActivity.class);
-            startActivity(intent);
-        });
-
         binding.layoutGogame.setOnClickListener((v)->{
             Intent intent = new Intent(this, GameActivity.class);
             startActivity(intent);

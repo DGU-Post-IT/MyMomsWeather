@@ -222,7 +222,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
-                    android:src="@drawable/ic_menu_home_col"
+                    android:src="@drawable/ic_home_col"
                     android:layout_gravity="center"/>
 
                 <TextView
@@ -249,7 +249,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
-                    android:src="@drawable/ic_menu_calendar"
+                    android:src="@drawable/ic_memory"
                     android:layout_gravity="center"/>
 
                 <TextView
@@ -258,23 +258,6 @@
                     android:text="기록보기"
                     android:textSize="20dp"
                     android:layout_gravity="center"/>
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:paddingTop="10dp"
-                android:id="@+id/layout_gocommunity"
-                android:layout_width="wrap_content"
-                android:layout_height="80dp"
-                android:orientation="vertical"
-                android:layout_weight="1"
-                android:foreground="?android:attr/selectableItemBackground"
-                android:focusable="true"
-                android:clickable="true">
-
-
-
 
             </LinearLayout>
 
@@ -293,7 +276,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
-                    android:src="@drawable/ic_menu_game"
+                    android:src="@drawable/ic_leaf"
                     android:layout_gravity="center"/>
 
                 <TextView

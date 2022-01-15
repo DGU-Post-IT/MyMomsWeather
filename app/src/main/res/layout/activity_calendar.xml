@@ -307,7 +307,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
-                    android:src="@drawable/ic_menu_home"
+                    android:src="@drawable/ic_home"
                     android:layout_gravity="center"/>
 
                 <TextView
@@ -334,40 +334,13 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
-                    android:src="@drawable/ic_menu_calendar_col"
+                    android:src="@drawable/ic_memory_col"
                     android:layout_gravity="center"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="기록보기"
-                    android:textSize="20dp"
-                    android:layout_gravity="center"/>
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:paddingTop="10dp"
-                android:id="@+id/layout_gocommunity"
-                android:layout_width="wrap_content"
-                android:layout_height="80dp"
-                android:orientation="vertical"
-                android:layout_weight="1"
-                android:foreground="?android:attr/selectableItemBackground"
-                android:focusable="true"
-                android:clickable="true">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="40dp"
-                    android:src="@drawable/ic_menu_community"
-                    android:layout_gravity="center"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="커뮤니티"
                     android:textSize="20dp"
                     android:layout_gravity="center"/>
 
@@ -388,13 +361,13 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
-                    android:src="@drawable/ic_menu_game"
+                    android:src="@drawable/ic_leaf"
                     android:layout_gravity="center"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="게임"
+                    android:text="식물키우기"
                     android:textSize="20dp"
                     android:layout_gravity="center"/>
 
