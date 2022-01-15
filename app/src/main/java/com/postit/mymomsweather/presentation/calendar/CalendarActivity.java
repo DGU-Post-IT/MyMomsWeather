@@ -162,18 +162,11 @@ public class CalendarActivity extends AppCompatActivity {
             @Override
             public void onChanged(HashMap<Integer, Integer> hm) {
                 ArrayList<PieEntry> weeklyData = new ArrayList<>();
-                if (hm.getOrDefault(0, 0) != 0) {
-                    weeklyData.add(new PieEntry(hm.getOrDefault(0, 0), "좋음"));
-                }
-                if (hm.getOrDefault(1, 0) != 0) {
-                    weeklyData.add(new PieEntry(hm.getOrDefault(1, 0), "무기력"));
-                }
-                if (hm.getOrDefault(2, 0) != 0) {
-                    weeklyData.add(new PieEntry(hm.getOrDefault(2, 0), "화남"));
-                }
-                if (hm.getOrDefault(3, 0) != 0) {
-                    weeklyData.add(new PieEntry(hm.getOrDefault(3, 0), "슬픔"));
-                }
+                weeklyData.add(new PieEntry(hm.getOrDefault(0, 0), "좋음"));
+                weeklyData.add(new PieEntry(hm.getOrDefault(1, 0), "무기력"));
+                weeklyData.add(new PieEntry(hm.getOrDefault(2, 0), "화남"));
+                weeklyData.add(new PieEntry(hm.getOrDefault(3, 0), "슬픔"));
+
                 PieDataSet pieDataSet = new PieDataSet(weeklyData, "");
                 pieDataSet.setColors(colorClassArray);
                 PieData pieData = new PieData(pieDataSet);
