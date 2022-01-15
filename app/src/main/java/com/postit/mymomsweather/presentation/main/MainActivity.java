@@ -49,10 +49,10 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        binding.layoutGocommunity.setOnClickListener((v)->{
-            Intent intent = new Intent(this, CommunityActivity.class);
-            startActivity(intent);
-        });
+//        binding.layoutGocommunity.setOnClickListener((v)->{
+//            Intent intent = new Intent(this, CommunityActivity.class);
+//            startActivity(intent);
+//        });
 
         binding.layoutGogame.setOnClickListener((v)->{
             Intent intent = new Intent(this, GameActivity.class);
