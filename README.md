@@ -16,6 +16,8 @@ Recognizing behavior based on radar sensors, it has effectively increased access
 
 Hyo°C is ***not available*** on the Google Play Store yet.
 
+*English description is below each Korean description.
+
 ## Skill Stack
 - MVVM
 - rxJava
@@ -59,11 +61,23 @@ In Hyo°C :
 <img src="https://user-images.githubusercontent.com/71082601/147050183-860e8e51-e8e7-4b8b-8996-b8b6db43be86.png" align="center" vspace="10">
 <img src="https://user-images.githubusercontent.com/71082601/147050191-3207db43-3b9b-49ac-9378-a8dc2262ede9.png" align="center" vspace="10">
 
+![효도씨 git 이미지1](https://user-images.githubusercontent.com/86652565/151655401-4d9af638-603d-4ac7-9e48-1415a311f437.png)
+<img width="960" alt="효도씨 git 이미지2" src="https://user-images.githubusercontent.com/86652565/151655391-848d5efa-c403-47d6-917a-e2992d5df767.png">
+<img width="960" alt="효도씨 git 이미지3" src="https://user-images.githubusercontent.com/86652565/151655395-bd4f3152-a81c-495b-8249-1e3244db5045.png">
+<img width="960" alt="효도씨 git 이미지4" src="https://user-images.githubusercontent.com/86652565/151655397-cc59db4e-61f4-4d69-a9e3-a95776764061.png">
+<img width="960" alt="효도씨 git 이미지5" src="https://user-images.githubusercontent.com/86652565/151655399-bdb82322-35a3-4cbd-9f1f-f4a8240d021e.png">
+
+
+
 
 ## Flow
 
 <img src="https://user-images.githubusercontent.com/71082601/147050533-b84abd08-40da-4e6b-ba42-7b118d3b73b7.png" align="center" vspace="10">
 <img src="https://user-images.githubusercontent.com/71082601/147050536-47240914-74c3-4e75-adac-d842958e8d73.png" align="center" vspace="10">
+
+![효도씨 git 이미지6(data flow)](https://user-images.githubusercontent.com/86652565/151655406-1762feda-2f7a-4d6b-8723-2032447522e8.png)
+![효도씨 git 이미지7(data flow)](https://user-images.githubusercontent.com/86652565/151655407-fc027799-4f27-4043-b0bc-0e36eb0f4519.png)
+
 
 ## Permissions
 
