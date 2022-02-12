@@ -69,8 +69,14 @@ public class CalendarActivity extends AppCompatActivity {
         getWindow().setWindowAnimations(0);
 
 
-        colorClassArray = new int[]{ContextCompat.getColor(getApplicationContext(), R.color.happy_pink), ContextCompat.getColor(getApplicationContext(), R.color.soso_blue),
-                ContextCompat.getColor(getApplicationContext(), R.color.angry_yellow), ContextCompat.getColor(getApplicationContext(), R.color.sad_mint)};
+        colorClassArray = new int[]{
+                ContextCompat.getColor(getApplicationContext(), R.color.happy_pink),
+                ContextCompat.getColor(getApplicationContext(), R.color.soso_blue),
+                ContextCompat.getColor(getApplicationContext(), R.color.angry_yellow),
+                ContextCompat.getColor(getApplicationContext(), R.color.sad_mint),
+                ContextCompat.getColor(getApplicationContext(), R.color.wound_green),
+                ContextCompat.getColor(getApplicationContext(), R.color.embarrass_gray)
+        };
 
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_CALL_LOG) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_CALL_LOG}, CALL_LOG_READ_PERMISSION);
@@ -130,9 +136,11 @@ public class CalendarActivity extends AppCompatActivity {
             public void onChanged(HashMap<Integer, Integer> hm) {
                 ArrayList<PieEntry> monthlyData = new ArrayList<>();
                 monthlyData.add(new PieEntry(hm.getOrDefault(0, 0), "좋음"));
-                monthlyData.add(new PieEntry(hm.getOrDefault(1, 0), "무기력"));
+                monthlyData.add(new PieEntry(hm.getOrDefault(1, 0), "슬픔"));
                 monthlyData.add(new PieEntry(hm.getOrDefault(2, 0), "화남"));
-                monthlyData.add(new PieEntry(hm.getOrDefault(3, 0), "슬픔"));
+                monthlyData.add(new PieEntry(hm.getOrDefault(3, 0), "불안"));
+                monthlyData.add(new PieEntry(hm.getOrDefault(4, 0), "상처"));
+                monthlyData.add(new PieEntry(hm.getOrDefault(5, 0), "당황"));
                 PieDataSet pieDataSet = new PieDataSet(monthlyData, "");
                 pieDataSet.setColors(colorClassArray);
                 PieData pieData = new PieData(pieDataSet);
@@ -166,13 +174,19 @@ public class CalendarActivity extends AppCompatActivity {
                     weeklyData.add(new PieEntry(hm.getOrDefault(0, 0), "좋음"));
                 }
                 if (hm.getOrDefault(1, 0) != 0) {
-                    weeklyData.add(new PieEntry(hm.getOrDefault(1, 0), "무기력"));
+                    weeklyData.add(new PieEntry(hm.getOrDefault(1, 0), "슬픔"));
                 }
                 if (hm.getOrDefault(2, 0) != 0) {
                     weeklyData.add(new PieEntry(hm.getOrDefault(2, 0), "화남"));
                 }
                 if (hm.getOrDefault(3, 0) != 0) {
-                    weeklyData.add(new PieEntry(hm.getOrDefault(3, 0), "슬픔"));
+                    weeklyData.add(new PieEntry(hm.getOrDefault(3, 0), "불안"));
+                }
+                if (hm.getOrDefault(4, 0) != 0) {
+                    weeklyData.add(new PieEntry(hm.getOrDefault(3, 0), "상처"));
+                }
+                if (hm.getOrDefault(5, 0) != 0) {
+                    weeklyData.add(new PieEntry(hm.getOrDefault(3, 0), "당황"));
                 }
                 PieDataSet pieDataSet = new PieDataSet(weeklyData, "");
                 pieDataSet.setColors(colorClassArray);
@@ -206,7 +220,7 @@ public class CalendarActivity extends AppCompatActivity {
                             break;
                         case 1:
                             binding.dailyEmotionView.setImageResource(R.drawable.ic_weather_soso);
-                            binding.dailyEmotionTextView.setText("무기력해요");
+                            binding.dailyEmotionTextView.setText("슬픔");
                             break;
                         case 2:
                             binding.dailyEmotionView.setImageResource(R.drawable.ic_weather_angry);
@@ -214,7 +228,15 @@ public class CalendarActivity extends AppCompatActivity {
                             break;
                         case 3:
                             binding.dailyEmotionView.setImageResource(R.drawable.ic_weather_sad);
-                            binding.dailyEmotionTextView.setText("슬퍼요");
+                            binding.dailyEmotionTextView.setText("불안");
+                            break;
+                        case 4:
+                            binding.dailyEmotionView.setImageResource(R.drawable.ic_weather_sad);
+                            binding.dailyEmotionTextView.setText("상처");
+                            break;
+                        case 5:
+                            binding.dailyEmotionView.setImageResource(R.drawable.ic_weather_sad);
+                            binding.dailyEmotionTextView.setText("당황");
                             break;
                         default:
                             binding.dailyEmotionView.setImageResource(R.drawable.ic_weather_nono);
