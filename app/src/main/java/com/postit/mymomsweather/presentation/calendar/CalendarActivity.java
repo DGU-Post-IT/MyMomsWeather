@@ -54,6 +54,7 @@ import java.util.Locale;
 public class CalendarActivity extends AppCompatActivity {
     final int CALL_LOG_READ_PERMISSION = 1000;
     int[] colorClassArray;
+    String[] emotions = {"좋음","슬픔","화남","불안","상처","당황"};
 
     //int a = ContextCompat.getColor(getApplicationContext(), R.color.happy_pink);
 
@@ -71,9 +72,9 @@ public class CalendarActivity extends AppCompatActivity {
 
         colorClassArray = new int[]{
                 ContextCompat.getColor(getApplicationContext(), R.color.happy_pink),
-                ContextCompat.getColor(getApplicationContext(), R.color.soso_blue),
-                ContextCompat.getColor(getApplicationContext(), R.color.angry_yellow),
                 ContextCompat.getColor(getApplicationContext(), R.color.sad_mint),
+                ContextCompat.getColor(getApplicationContext(), R.color.angry_yellow),
+                ContextCompat.getColor(getApplicationContext(), R.color.soso_blue),
                 ContextCompat.getColor(getApplicationContext(), R.color.wound_green),
                 ContextCompat.getColor(getApplicationContext(), R.color.embarrass_gray)
         };
@@ -135,13 +136,9 @@ public class CalendarActivity extends AppCompatActivity {
             @Override
             public void onChanged(HashMap<Integer, Integer> hm) {
                 ArrayList<PieEntry> monthlyData = new ArrayList<>();
-                monthlyData.add(new PieEntry(hm.getOrDefault(0, 0), "좋음"));
-                monthlyData.add(new PieEntry(hm.getOrDefault(1, 0), "슬픔"));
-                monthlyData.add(new PieEntry(hm.getOrDefault(2, 0), "화남"));
-                monthlyData.add(new PieEntry(hm.getOrDefault(3, 0), "불안"));
-                monthlyData.add(new PieEntry(hm.getOrDefault(4, 0), "상처"));
-                monthlyData.add(new PieEntry(hm.getOrDefault(5, 0), "당황"));
-                PieDataSet pieDataSet = new PieDataSet(monthlyData, "");
+                for (int i = 0; i < emotions.length; i++) {
+                monthlyData.add(new PieEntry(hm.getOrDefault(i, 0), emotions[i]));
+                }PieDataSet pieDataSet = new PieDataSet(monthlyData, "");
                 pieDataSet.setColors(colorClassArray);
                 PieData pieData = new PieData(pieDataSet);
                 pieData.setValueTextSize(12);
@@ -170,26 +167,15 @@ public class CalendarActivity extends AppCompatActivity {
             @Override
             public void onChanged(HashMap<Integer, Integer> hm) {
                 ArrayList<PieEntry> weeklyData = new ArrayList<>();
-                if (hm.getOrDefault(0, 0) != 0) {
-                    weeklyData.add(new PieEntry(hm.getOrDefault(0, 0), "좋음"));
-                }
-                if (hm.getOrDefault(1, 0) != 0) {
-                    weeklyData.add(new PieEntry(hm.getOrDefault(1, 0), "슬픔"));
-                }
-                if (hm.getOrDefault(2, 0) != 0) {
-                    weeklyData.add(new PieEntry(hm.getOrDefault(2, 0), "화남"));
-                }
-                if (hm.getOrDefault(3, 0) != 0) {
-                    weeklyData.add(new PieEntry(hm.getOrDefault(3, 0), "불안"));
-                }
-                if (hm.getOrDefault(4, 0) != 0) {
-                    weeklyData.add(new PieEntry(hm.getOrDefault(3, 0), "상처"));
-                }
-                if (hm.getOrDefault(5, 0) != 0) {
-                    weeklyData.add(new PieEntry(hm.getOrDefault(3, 0), "당황"));
+                ArrayList<Integer> colors = new ArrayList<>();
+                for (int i = 0; i < emotions.length; i++) {
+                    if (hm.getOrDefault(i, 0) != 0) {
+                        weeklyData.add(new PieEntry(hm.getOrDefault(i, 0), emotions[i]));
+                        colors.add(colorClassArray[i]);
+                    }
                 }
                 PieDataSet pieDataSet = new PieDataSet(weeklyData, "");
-                pieDataSet.setColors(colorClassArray);
+                pieDataSet.setColors(colors);
                 PieData pieData = new PieData(pieDataSet);
                 pieData.setValueTextSize(12);
                 pieData.setValueFormatter(new ValueFormatter() {
