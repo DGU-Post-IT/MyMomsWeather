@@ -217,11 +217,11 @@ public class CalendarActivity extends AppCompatActivity {
                             binding.dailyEmotionTextView.setText("불안");
                             break;
                         case 4:
-                            binding.dailyEmotionView.setImageResource(R.drawable.ic_weather_sad);
+                            binding.dailyEmotionView.setImageResource(R.drawable.ic_weather_wound);
                             binding.dailyEmotionTextView.setText("상처");
                             break;
                         case 5:
-                            binding.dailyEmotionView.setImageResource(R.drawable.ic_weather_sad);
+                            binding.dailyEmotionView.setImageResource(R.drawable.ic_weather_embarassed);
                             binding.dailyEmotionTextView.setText("당황");
                             break;
                         default:

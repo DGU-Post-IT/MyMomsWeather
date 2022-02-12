@@ -76,11 +76,11 @@ public class InfoBoardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
                     binding.weatherDescriptionTextView.setText("불안");
                     break;
                 case 4:
-                    binding.weatherImageView.setImageResource(R.drawable.ic_weather_sad);
+                    binding.weatherImageView.setImageResource(R.drawable.ic_weather_wound);
                     binding.weatherDescriptionTextView.setText("상처");
                     break;
                 case 5:
-                    binding.weatherImageView.setImageResource(R.drawable.ic_weather_sad);
+                    binding.weatherImageView.setImageResource(R.drawable.ic_weather_embarassed);
                     binding.weatherDescriptionTextView.setText("당황");
                     break;
                 default:
