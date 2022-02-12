@@ -94,39 +94,39 @@
             android:elevation="2dp"
             >
 
-        <LinearLayout
-            android:padding="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            >
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:src="@drawable/plant_sample"
-                android:background="@drawable/ic_circle"
-                android:outlineProvider="background"
-                android:scaleType="centerCrop"
-                android:clipToOutline="true"
-                android:layout_margin="8dp"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="10dp"
-                android:textSize="27sp"
-                android:textColor="@color/happy_pink"
-                android:text = "90"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="23sp"
-                android:text = "일  전에 물을 줬습니다."
-                />
+<!--        <LinearLayout-->
+<!--            android:padding="10dp"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:gravity="center_vertical"-->
+<!--            >-->
+<!--            <ImageView-->
+<!--                android:layout_width="50dp"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:src="@drawable/plant_sample"-->
+<!--                android:background="@drawable/ic_circle"-->
+<!--                android:outlineProvider="background"-->
+<!--                android:scaleType="centerCrop"-->
+<!--                android:clipToOutline="true"-->
+<!--                android:layout_margin="8dp"-->
+<!--                />-->
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginHorizontal="10dp"-->
+<!--                android:textSize="27sp"-->
+<!--                android:textColor="@color/happy_pink"-->
+<!--                android:text = "90"-->
+<!--                />-->
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:textSize="23sp"-->
+<!--                android:text = "일  전에 물을 줬습니다."-->
+<!--                />-->
 
-        </LinearLayout>
+<!--        </LinearLayout>-->
 
         </androidx.cardview.widget.CardView>
 
