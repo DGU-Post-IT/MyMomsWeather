@@ -65,7 +65,7 @@ public class InfoBoardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
                     break;
                 case 1:
                     binding.weatherImageView.setImageResource(R.drawable.ic_weather_soso);
-                    binding.weatherDescriptionTextView.setText("슬픔");
+                    binding.weatherDescriptionTextView.setText("슬퍼요");
                     break;
                 case 2:
                     binding.weatherImageView.setImageResource(R.drawable.ic_weather_angry);
@@ -73,15 +73,15 @@ public class InfoBoardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
                     break;
                 case 3:
                     binding.weatherImageView.setImageResource(R.drawable.ic_weather_sad);
-                    binding.weatherDescriptionTextView.setText("불안");
+                    binding.weatherDescriptionTextView.setText("불안하요");
                     break;
                 case 4:
                     binding.weatherImageView.setImageResource(R.drawable.ic_weather_wound);
-                    binding.weatherDescriptionTextView.setText("상처");
+                    binding.weatherDescriptionTextView.setText("상처받았어요");
                     break;
                 case 5:
                     binding.weatherImageView.setImageResource(R.drawable.ic_weather_embarassed);
-                    binding.weatherDescriptionTextView.setText("당황");
+                    binding.weatherDescriptionTextView.setText("당황스러워요");
                     break;
                 default:
                     binding.weatherImageView.setImageResource(R.drawable.ic_weather_nono);
