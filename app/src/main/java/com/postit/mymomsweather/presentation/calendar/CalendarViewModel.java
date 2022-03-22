@@ -36,7 +36,7 @@ public class CalendarViewModel extends AndroidViewModel {
     ListLiveData<EmotionRecord> emotionRecordList = new ListLiveData<>();
     MutableLiveData<String> phoneNumber = new MutableLiveData<>();
     MutableLiveData<String> parentID = new MutableLiveData<>();
-    MutableLiveData<EmotionRecord> yesterdayEmotion = new MutableLiveData<>(new EmotionRecord(4));
+    MutableLiveData<EmotionRecord> yesterdayEmotion = new MutableLiveData<>(new EmotionRecord(6));
     public MutableLiveData<Integer> selectedView = new MutableLiveData<>();
 
     public CalendarViewModel(Application application) {
