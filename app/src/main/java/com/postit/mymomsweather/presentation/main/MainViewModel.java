@@ -64,7 +64,7 @@ public class MainViewModel extends AndroidViewModel {
                                 latestEmotion.setValue(er);
                                 break;
                             }else{
-                                latestEmotion.setValue(er.setEmotion(4));
+                                latestEmotion.setValue(er.setEmotion(6));
                             }
                         }
                     }
