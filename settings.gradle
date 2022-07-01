@@ -9,5 +9,5 @@ dependencyResolutionManagement {
         maven { url 'https://jitpack.io' }
     }
 }
-rootProject.name = "MyMomsWeather"
+rootProject.name = "hyodo-c-child"
 include ':app'
