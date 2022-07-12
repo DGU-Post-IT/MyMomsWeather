@@ -6,11 +6,11 @@ width="120" vspace="10">
 <img src="https://user-images.githubusercontent.com/71082601/147047179-e76b3f61-89b3-4cfc-a74c-e5ce82b706aa.png" align="left"
 width="120" vspace="10">
 
-효°C 는 노년층의 우울증을 예방하고, 가족 간의 관계를 증진시킬 수 있는 앱입니다.
+효°C 는 가족 간, 특히 노령 부모세대와 중년 자녀세대의 관계를 증진시킬 수 있는 앱입니다.
 노령세대와 부모세대가 원하는 정보, 스마트폰 숙련도가 다름을 신경써서 두 개의 앱을 제작하였습니다.
 레이더 센서를 기반으로 행동을 인지하여, 스마트폰이 미숙한 노년층에게도 효과적으로 접근성을 높였습니다.
 
-Hyo °C is an app that can prevent depression in the elderly and promote family relationships.
+Hyo°C is an app that can enhance the relationship between families, especially elderly parents and middle-aged children.
 We created two apps, paying attention to the difference in information and smartphone proficiency that the elderly and their parents want.
 Recognizing behavior based on radar sensors, it has effectively increased accessibility for older people who are inexperienced with smartphones.
 
@@ -55,17 +55,18 @@ In Hyo°C :
 - A chart where you can check your parents' emotional records.
 - Account management functions.
 
-<img src="https://user-images.githubusercontent.com/71082601/147050151-c228a39b-ab38-4cec-9155-be5bddadb6b4.png" align="center" vspace="10">
+![image](https://user-images.githubusercontent.com/86652565/178502221-ceb97b86-7ac8-4210-bd65-510eca819b0a.png)
 <img src="https://user-images.githubusercontent.com/71082601/147050162-3add80ec-ec08-44be-9b52-c89f6fe464bf.png" align="center" vspace="10">
 <img src="https://user-images.githubusercontent.com/71082601/147050168-52f6a3d9-b389-4752-bbcf-c5f8ddb71739.png" align="center" vspace="10">
 <img src="https://user-images.githubusercontent.com/71082601/147050183-860e8e51-e8e7-4b8b-8996-b8b6db43be86.png" align="center" vspace="10">
 <img src="https://user-images.githubusercontent.com/71082601/147050191-3207db43-3b9b-49ac-9378-a8dc2262ede9.png" align="center" vspace="10">
 
-![효도씨 git 이미지1](https://user-images.githubusercontent.com/86652565/151655401-4d9af638-603d-4ac7-9e48-1415a311f437.png)
+![image](https://user-images.githubusercontent.com/86652565/178502482-5643014b-94d3-48ad-b060-38d2c761b12f.png)
 <img width="960" alt="효도씨 git 이미지2" src="https://user-images.githubusercontent.com/86652565/151655391-848d5efa-c403-47d6-917a-e2992d5df767.png">
 <img width="960" alt="효도씨 git 이미지3" src="https://user-images.githubusercontent.com/86652565/151655395-bd4f3152-a81c-495b-8249-1e3244db5045.png">
 <img width="960" alt="효도씨 git 이미지4" src="https://user-images.githubusercontent.com/86652565/151655397-cc59db4e-61f4-4d69-a9e3-a95776764061.png">
 <img width="960" alt="효도씨 git 이미지5" src="https://user-images.githubusercontent.com/86652565/151655399-bdb82322-35a3-4cbd-9f1f-f4a8240d021e.png">
+
 
 
 
